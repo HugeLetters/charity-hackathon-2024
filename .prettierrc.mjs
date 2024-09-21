@@ -2,11 +2,13 @@
 export default {
 	arrowParens: "always",
 	bracketSameLine: false,
+	bracketSpacing: true,
 	semi: true,
 	singleQuote: false,
 	singleAttributePerLine: true,
-	trailingComma: "all",
+	trailingComma: "es5",
 	useTabs: true,
+	printWidth: 80,
 	plugins: ["prettier-plugin-astro"],
 	overrides: [
 		{
