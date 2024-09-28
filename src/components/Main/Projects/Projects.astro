@@ -1,216 +1,313 @@
 ---
-import MainSegment from '@components/shared/MainSegment.astro'
-import SectionTitle from '@components/shared/SectionTitle.astro'
-import Arrow from '@components/shared/Arrow.astro'
+import MainSegment from "@components/shared/MainSegment.astro";
+import SectionTitle from "@components/shared/SectionTitle.astro";
+import Arrow from "@components/shared/Arrow.astro";
 ---
 
 <MainSegment>
-    <section class="projects">
-        <div class="projects__start">
-            <div class="title">
-                <SectionTitle>Our Projects</SectionTitle>
-                <h3 class="projects__heading">Trusted & Reliable</h3>
-            </div>
-            <div class="navigation">
-                <Arrow direction='left'/>
-                <Arrow direction='right'/>
-            </div>
-        </div>
-        <div class="projects__carousel carousel">
-            <!-- Todo: скачать 4 (разные) картинки -->
-            <div class="slide slide-1">
-                <div class="slide__content">
-                    <button class="btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1L10 19M19 10.75L1 10.75" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="btns">
-                        <span class="btn-orange">Contraction</span>
-                        <span class="btn-black">Skyline Tower Renovation</span>
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide-2">
-                <div class="slide__content">
-                    <button class="btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1L10 19M19 10.75L1 10.75" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="btns">
-                        <span class="btn-orange">Contraction</span>
-                        <span class="btn-black">Skyline Tower Renovation</span>
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide-3">
-                <div class="slide__content">
-                    <button class="btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1L10 19M19 10.75L1 10.75" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="btns">
-                        <span class="btn-orange">Contraction</span>
-                        <span class="btn-black">Skyline Tower Renovation</span>
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide-4">
-                <div class="slide__content">
-                    <button class="btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1L10 19M19 10.75L1 10.75" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="btns">
-                        <span class="btn-orange">Contraction</span>
-                        <span class="btn-black">Skyline Tower Renovation</span>
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide-5">
-                <div class="slide__content">
-                    <button class="btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1L10 19M19 10.75L1 10.75" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="btns">
-                        <span class="btn-orange">Contraction</span>
-                        <span class="btn-black">Skyline Tower Renovation</span>
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide-6">
-                <div class="slide__content">
-                    <button class="btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1L10 19M19 10.75L1 10.75" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <div class="btns">
-                        <span class="btn-orange">Contraction</span>
-                        <span class="btn-black">Skyline Tower Renovation</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="projects">
+		<div class="projects__start">
+			<div class="title">
+				<SectionTitle>Our Projects</SectionTitle>
+				<h3 class="projects__heading">Trusted & Reliable</h3>
+			</div>
+			<div class="navigation">
+				<button
+					type="button"
+					data-dir="left"
+					class="arrow"
+				>
+					<Arrow />
+				</button>
+				<button
+					type="button"
+					data-dir="right"
+					class="arrow"
+				>
+					<Arrow />
+				</button>
+			</div>
+		</div>
+		<div class="projects__carousel carousel">
+			<!-- Todo: скачать 4 (разные) картинки -->
+			<div class="slide slide-1">
+				<div class="slide__content">
+					<button class="btn-primary">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M10 1L10 19M19 10.75L1 10.75"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							></path>
+						</svg>
+					</button>
+					<div class="btns">
+						<span class="btn-orange">Contraction</span>
+						<span class="btn-black">Skyline Tower Renovation</span>
+					</div>
+				</div>
+			</div>
+			<div class="slide slide-2">
+				<div class="slide__content">
+					<button class="btn-primary">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M10 1L10 19M19 10.75L1 10.75"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							></path>
+						</svg>
+					</button>
+					<div class="btns">
+						<span class="btn-orange">Contraction</span>
+						<span class="btn-black">Skyline Tower Renovation</span>
+					</div>
+				</div>
+			</div>
+			<div class="slide slide-3">
+				<div class="slide__content">
+					<button class="btn-primary">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M10 1L10 19M19 10.75L1 10.75"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							></path>
+						</svg>
+					</button>
+					<div class="btns">
+						<span class="btn-orange">Contraction</span>
+						<span class="btn-black">Skyline Tower Renovation</span>
+					</div>
+				</div>
+			</div>
+			<div class="slide slide-4">
+				<div class="slide__content">
+					<button class="btn-primary">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M10 1L10 19M19 10.75L1 10.75"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							></path>
+						</svg>
+					</button>
+					<div class="btns">
+						<span class="btn-orange">Contraction</span>
+						<span class="btn-black">Skyline Tower Renovation</span>
+					</div>
+				</div>
+			</div>
+			<div class="slide slide-5">
+				<div class="slide__content">
+					<button class="btn-primary">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M10 1L10 19M19 10.75L1 10.75"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							></path>
+						</svg>
+					</button>
+					<div class="btns">
+						<span class="btn-orange">Contraction</span>
+						<span class="btn-black">Skyline Tower Renovation</span>
+					</div>
+				</div>
+			</div>
+			<div class="slide slide-6">
+				<div class="slide__content">
+					<button class="btn-primary">
+						<svg
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M10 1L10 19M19 10.75L1 10.75"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							></path>
+						</svg>
+					</button>
+					<div class="btns">
+						<span class="btn-orange">Contraction</span>
+						<span class="btn-black">Skyline Tower Renovation</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </MainSegment>
 
 <style>
-    .projects {
-        grid-column: 1 / -1;
-    }
+	.projects {
+		display: contents;
+	}
 
-    .projects__start {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        width: 81rem;
-        margin: 0 auto 67px auto;
-    }
+	.projects__start {
+		grid-column: 2 / 2;
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+		padding-bottom: 67px;
+	}
 
-    .navigation {
-        display: flex;
-        gap: 28px;
-    }
+	.navigation {
+		display: flex;
+		gap: 2rem;
+		padding-bottom: 2rem;
+	}
 
-    .projects__heading {
-        margin-top: 3px;
-        font-family: var(--font-jost);
-        font-weight: 600;
-        font-size: 3.25rem;
-    }
+	.arrow {
+		height: 1rem;
+		transition: color 300ms;
+	}
 
-    .projects__carousel {
-        display: flex;
-        gap: 1.5rem;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        width: 100%;
-        height: 27.7rem;
-        -webkit-overflow-scrolling: touch;
-    }
+	.arrow:is(:hover, :focus-visible) {
+		color: var(--color-brand-primary);
+	}
 
-    .slide {
-        flex: none;
-        scroll-snap-align: start;
-        width: 39rem;
-        text-align: center;
-    }
+	.arrow[data-dir="right"] {
+		rotate: 180deg;
+	}
 
-    .slide:hover .slide__content {
-        opacity: 1;
-    }
+	.projects__heading {
+		margin-top: 3px;
+		font-family: var(--font-jost);
+		font-weight: 600;
+		font-size: 3.25rem;
+	}
 
-    .slide-1, .slide-3, .slide-5 {
-        background-image: url('img/slide-1.jpg');
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+	.projects__carousel {
+		grid-column: 1 / -1;
+		display: flex;
+		gap: 1.5rem;
+		overflow-x: scroll;
+		scroll-snap-type: x mandatory;
+		width: 100%;
+		height: 27.7rem;
+		-webkit-overflow-scrolling: touch;
+	}
 
-    .slide-2, .slide-4, .slide-6 {
-        background-image: url('img/slide-2.jpg');
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+	.slide {
+		flex: none;
+		scroll-snap-align: start;
+		width: 39rem;
+		text-align: center;
+	}
 
-    .slide__content {
-        padding: 10rem 1.9rem 1.9rem 1.9rem;
-        opacity: 0;
-        transition: opacity .2s ease-in;
-    }
+	.slide:hover .slide__content {
+		opacity: 1;
+	}
 
-    .btn-primary {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto 3rem auto;
-        border: 11px solid #D9D9D9;
-        width: 3.75rem;
-        height: 3.75rem;
-        background-color: var(--color-brand-primary);
-        transform: scale(1);
-        transition: transform .2s ease-in;
-    }
+	.slide-1,
+	.slide-3,
+	.slide-5 {
+		background-image: url("img/slide-1.jpg");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 
-    .btn-primary svg path{
-        stroke: white;
-        transition: stroke .2s ease-in;
-    }
+	.slide-2,
+	.slide-4,
+	.slide-6 {
+		background-image: url("img/slide-2.jpg");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 
-    .btn-primary:hover {
-        transform: scale(1.1);
-    }
+	.slide__content {
+		padding: 10rem 1.9rem 1.9rem 1.9rem;
+		opacity: 0;
+		transition: opacity 0.2s ease-in;
+	}
 
-    .btn-primary:hover svg path{
-        stroke: black;
-    }
+	.btn-primary {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto 3rem auto;
+		border: 11px solid #d9d9d9;
+		width: 3.75rem;
+		height: 3.75rem;
+		background-color: var(--color-brand-primary);
+		transform: scale(1);
+		transition: transform 0.2s ease-in;
+	}
 
-    .btns {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-    }
+	.btn-primary svg path {
+		stroke: white;
+		transition: stroke 0.2s ease-in;
+	}
 
-    .btn-orange {
-        padding: 0.4rem 1rem;
-        width: max-content;
-        color: #ffff;
-        background-color: var(--color-brand-primary);
-    }
+	.btn-primary:hover {
+		transform: scale(1.1);
+	}
 
-    .btn-black {
-        padding: 1rem 1.5rem;
-        width: max-content;
-        height: 4.6rem;
-        font-family: var(--font-jost);
-        font-weight: 600;
-        font-size: 2rem;
-        color: #ffff;
-        background-color: var(--color-text-primary);
-    }
+	.btn-primary:hover svg path {
+		stroke: black;
+	}
+
+	.btns {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.btn-orange {
+		padding: 0.4rem 1rem;
+		width: max-content;
+		color: #ffff;
+		background-color: var(--color-brand-primary);
+	}
+
+	.btn-black {
+		padding: 1rem 1.5rem;
+		width: max-content;
+		height: 4.6rem;
+		font-family: var(--font-jost);
+		font-weight: 600;
+		font-size: 2rem;
+		color: #ffff;
+		background-color: var(--color-text-primary);
+	}
 </style>
