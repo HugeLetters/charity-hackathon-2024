@@ -4,7 +4,19 @@ import MainSegment from "@components/shared/MainSegment.astro";
 import Link from "@components/shared/Link.astro";
 import { Image } from "astro:assets";
 import FirstEngineer from "./img/engineer-1.png";
+import SecondEngineer from "./img/engineer-2.png";
+import ThirdEngineer from "./img/engineer-3.png";
+import FourthEngineer from "./img/engineer-4.png";
 ---
+
+<script>
+	const employeePortrait = document.querySelectorAll("team__member-portrait");
+	const employeeName = document.querySelectorAll("member__name");
+
+	function onNameClick() {}
+
+	employeeName.addEventListener("click", onNameClick);
+</script>
 
 <MainSegment>
 	<div class='team__wrap'>
