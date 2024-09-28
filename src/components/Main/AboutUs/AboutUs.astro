@@ -1,24 +1,52 @@
 ---
-import Schematic from "@components/shared/Schematic.astro";
-import MainSegment from "@components/shared/MainSegment.astro";
-import SectionTitle from "@components/shared/SectionTitle.astro";
+import Arrow from "@components/shared/Arrow.astro";
 import Link from "@components/shared/Link.astro";
+import MainSegment from "@components/shared/MainSegment.astro";
+import Schematic from "@components/shared/Schematic.astro";
+import SectionTitle from "@components/shared/SectionTitle.astro";
+import CommmunityPng from "./assets/community.jpg";
+import CustomerPng from "./assets/customer.jpg";
+import ResponsibilityPng from "./assets/responsibility.jpg";
+import TeamworkPng from "./assets/teamwork.jpg";
+import ValuesPng from "./assets/values.jpg";
+import VisionPng from "./assets/vision.jpg";
+import Card from "./Card.astro";
 import TextWithReflection from "./TextWithReflection.astro";
 ---
 
+<script>
+	import { createHorizontalSlider } from "@components/shared/slider";
+
+	const root = document.getElementById("about-us-content")!;
+	const controls = root.querySelector(".controls")!;
+
+	const prevButton = controls.querySelector<HTMLButtonElement>(
+		"button[data-dir=left]"
+	)!;
+	const nextButton = controls.querySelector<HTMLButtonElement>(
+		"button[data-dir=right]"
+	)!;
+	const slider = root.querySelector<HTMLElement>(".cards")!;
+	createHorizontalSlider({ slider, nextButton, prevButton });
+</script>
+
 <MainSegment>
-	<div class="content">
-		<div>
+	<div
+		class="content"
+		id="about-us-content"
+	>
+		<div class="header">
 			<div>
 				<SectionTitle>About Us</SectionTitle>
 				<h3 class="title">What about our industry Performance.</h3>
 			</div>
-			<div>
+
+			<div class="header-second-col">
 				<div class="caption">
 					In today's world, we're bombarded with choices. From streaming
 					services to meal kits, it can be overwhelming.
 				</div>
-				<div>
+				<div class="read-more-block">
 					<Link
 						theme="primary"
 						href="todo"
@@ -31,10 +59,77 @@ import TextWithReflection from "./TextWithReflection.astro";
 				</div>
 			</div>
 		</div>
-		<div>
-			<card>1</card>
-			<card>2</card>
-			<card>3</card>
+		<div class="cards">
+			<Card
+				img={VisionPng}
+				title="Our Vision"
+				values={[
+					"Shaping a sustainable future",
+					"Empowering global progress",
+					"Pioneering technological advancements",
+				]}
+			/>
+			<Card
+				img={ValuesPng}
+				title="Core Values"
+				values={[
+					"Integrity and ethics",
+					"Commitment to quality",
+					"Innovation and creativity",
+				]}
+			/>
+			<Card
+				img={CommmunityPng}
+				title="Community Engagement"
+				values={[
+					"Fostering local partnerships",
+					"Promoting volunteer initiatives",
+					"Supporting educational programs",
+				]}
+			/>
+			<Card
+				img={CustomerPng}
+				title="Customer Focus"
+				values={[
+					"Exceeding expectations",
+					"Personalized solutions",
+					"Responsive support",
+				]}
+			/>
+			<Card
+				img={ResponsibilityPng}
+				title="Environmental Responsibility"
+				values={[
+					"Reducing carbon footprint",
+					"Promoting sustainable practices",
+					"Investing in green technologies",
+				]}
+			/>
+			<Card
+				img={TeamworkPng}
+				title="Teamwork Philosophy"
+				values={[
+					"Fostering collaboration",
+					"Embracing diversity",
+					"Encouraging open communication",
+				]}
+			/>
+		</div>
+		<div class="controls">
+			<button
+				type="button"
+				data-dir="left"
+				class="arrow"
+			>
+				<Arrow />
+			</button>
+			<button
+				type="button"
+				data-dir="right"
+				class="arrow"
+			>
+				<Arrow />
+			</button>
 		</div>
 	</div>
 	<div>
@@ -46,20 +141,75 @@ import TextWithReflection from "./TextWithReflection.astro";
 	.content {
 		font-family: var(--font-jost);
 		grid-column-start: 2;
+		width: 100%;
+		min-width: 0;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		gap: 8rem;
+		padding-bottom: 3rem;
+	}
+
+	.header-second-col {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	.title {
 		font-weight: 600;
 		font-size: 3.5rem;
+		line-height: 1.2;
+		text-transform: capitalize;
 	}
 
 	.caption {
 		color: var(--color-text-neutral-dark);
 		font-family: var(--font-barlow);
+		padding-bottom: 1.5rem;
+	}
+
+	.read-more-block {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
 	}
 
 	.experience {
 		font-size: 2rem;
 		font-weight: 600;
+	}
+
+	.cards {
+		display: grid;
+		width: 100%;
+		min-height: 20.5rem;
+		grid-auto-flow: column;
+		gap: 1.5rem;
+		overflow-x: scroll;
+		scroll-snap-type: x mandatory;
+	}
+
+	.controls {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		padding-top: 2rem;
+	}
+
+	.arrow {
+		height: 1rem;
+		transition: color 300ms;
+		outline: 2px solid transparent;
+	}
+
+	.arrow:is(:hover, :focus-visible) {
+		color: var(--color-brand-primary);
+	}
+
+	.arrow[data-dir="right"] {
+		rotate: 180deg;
 	}
 </style>

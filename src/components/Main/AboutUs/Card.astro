@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	img: ImageMetadata;
+	title: string;
+	values: Array<string>;
+}
+
+const { img, title, values } = Astro.props;
+---
+
+<div class="root">
+	<Image
+		src={img}
+		alt=""
+		class="image"
+	/>
+
+	<div class="description">
+		<div class="title">{title}</div>
+		<ul class="values">
+			{values.map((value) => <li>{value}</li>)}
+		</ul>
+	</div>
+</div>
+
+<style>
+	.root {
+		display: grid;
+		aspect-ratio: 416 / 332;
+		scroll-snap-align: end;
+	}
+
+	.image,
+	.description {
+		grid-area: 1 / -1;
+	}
+
+	.image {
+		z-index: -1;
+		filter: brightness(0.4);
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	.title {
+		color: white;
+	}
+
+	.values {
+		color: var(--color-text-neutral);
+	}
+
+	li {
+		/* todo - add plus */
+	}
+</style>
