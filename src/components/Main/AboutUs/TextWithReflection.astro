@@ -1,0 +1,43 @@
+---
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="root">
+	<div class="content">{text}</div>
+	<div class="reflected">{text}</div>
+</div>
+
+<style>
+	.root {
+		display: grid;
+		width: fit-content;
+		isolation: isolate;
+		grid-template-rows: auto 0.75rem;
+	}
+
+	.content,
+	.reflected {
+		grid-area: 1 / -1;
+	}
+
+	.content {
+		z-index: 1;
+	}
+
+	.reflected {
+		line-height: 1.25rem;
+		transform: scaleY(-1) translateY(-0.5rem);
+		color: var(--color-text-neutral);
+	}
+
+	.reflected::after {
+		position: absolute;
+		inset: -0.2rem 0 1.25lh;
+		content: "";
+		background: linear-gradient(white 30%, #fffe 45%, transparent);
+	}
+</style>

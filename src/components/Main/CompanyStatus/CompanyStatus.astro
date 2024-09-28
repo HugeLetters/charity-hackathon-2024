@@ -1,1 +1,179 @@
-company status
+---
+import Schematic from "@components/shared/Schematic.astro";
+import MainSegment from "@components/shared/MainSegment.astro";
+---
+
+<script>
+	const animateStatusNumbers = function () {
+		const statusCounters = document.querySelectorAll("#statusNum");
+		const statusSpeed = 400;
+
+		statusCounters.forEach((counter) => {
+			const animate = () => {
+				const value = +counter.getAttribute("value");
+				const data = +counter.innerText;
+
+				const time = value / statusSpeed;
+				if (data < value) {
+					counter.innerText = Math.ceil(data + time);
+					setTimeout(animate, 1);
+				} else {
+					counter.innerText = value;
+				}
+			};
+			animate();
+		});
+	};
+
+	function showStatusNumbers() {
+		const statusSection = document.querySelector("#sectionStatus");
+		console.log(statusSection);
+
+		const options = {
+			root: null,
+			threshold: 0.3,
+			rootMargin: "-40px",
+		};
+
+		const myObserver = new IntersectionObserver(cb, options);
+		myObserver.observe(statusSection);
+
+		function cb(entries) {
+			const [entry] = entries;
+			if (entry.isIntersecting) {
+				animateStatusNumbers();
+			}
+		}
+	}
+	showStatusNumbers();
+</script>
+
+<MainSegment>
+	<div class="schematic">
+		<Schematic />
+	</div>
+
+	<section
+		class="status"
+		id="sectionStatus"
+	>
+		<h2 class="status__title">Our Company Status</h2>
+		<h3 class="status__subtitle">Trusted & Reliable</h3>
+
+		<div class="status__stats">
+			<div class="status__stat">
+				<span
+					class="status__number"
+					id="statusNum"
+					value="110"
+					>0</span
+				><span>+</span>
+				<p class="status__number-descr">Completed projects</p>
+			</div>
+			<div class="status__stat">
+				<span
+					class="status__number"
+					id="statusNum"
+					value="280"
+					>0</span
+				><span>+</span>
+				<p class="status__number-descr">Team Member</p>
+			</div>
+			<div class="status__stat">
+				<span
+					class="status__number"
+					id="statusNum"
+					value="100"
+					>0</span
+				><span>%+</span>
+				<p class="status__number-descr">Client Satisfaction</p>
+			</div>
+			<div class="status__stat">
+				<span
+					class="status__number"
+					id="statusNum"
+					value="30"
+					>0</span
+				><span>+</span>
+				<p class="status__number-descr">Running Project</p>
+			</div>
+		</div>
+	</section>
+</MainSegment>
+
+<style>
+	.status {
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+
+		font-family: var(--font-jost);
+		font-weight: 600;
+		color: var(--color-text-primary);
+		text-align: center;
+		grid-column: 2 / 3;
+	}
+
+	.status__title {
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 26px;
+		color: var(--color-text-primary);
+		position: relative;
+	}
+
+	.status__title::before {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 15px;
+		height: 1px;
+		background-color: var(--color-brand-primary);
+		left: -25px;
+		top: 50%;
+	}
+
+	.status__subtitle {
+		font-size: 52px;
+		line-height: 62px;
+		margin-bottom: 67px;
+	}
+
+	.status__stats {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.status__stat {
+		padding: 50px 0;
+		width: 100%;
+		max-width: 306px;
+		transition: all 0.2s linear 0s;
+		cursor: pointer;
+	}
+
+	.status__stat:hover {
+		background-color: var(--color-brand-primary);
+	}
+
+	.status__stat:hover .status__number,
+	.status__stat:hover .status__number + span,
+	.status__stat:hover .status__number-descr {
+		color: #fff;
+	}
+
+	.status__number,
+	.status__number + span {
+		font-size: 52px;
+		line-height: 62px;
+		margin-bottom: 10px;
+	}
+
+	.status__number-descr {
+		font-size: 24px;
+		line-height: 34px;
+		margin-top: 10px;
+	}
+</style>
