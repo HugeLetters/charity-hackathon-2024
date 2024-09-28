@@ -1,6 +1,7 @@
 ---
 import Schematic from "@components/shared/Schematic.astro";
 import MainSegment from "@components/shared/MainSegment.astro";
+import SectionTitle from "@components/shared/SectionTitle.astro";
 ---
 
 <script>
@@ -32,7 +33,7 @@ import MainSegment from "@components/shared/MainSegment.astro";
 		const options = {
 			root: null,
 			threshold: 0.3,
-			rootMargin: "-40px",
+			rootMargin: "-100px",
 		};
 
 		const myObserver = new IntersectionObserver(cb, options);
@@ -57,7 +58,9 @@ import MainSegment from "@components/shared/MainSegment.astro";
 		class="status"
 		id="sectionStatus"
 	>
-		<h2 class="status__title">Our Company Status</h2>
+		<div class="status__title-wrapper">
+			<SectionTitle>Our Price table</SectionTitle>
+		</div>
 		<h3 class="status__subtitle">Trusted & Reliable</h3>
 
 		<div class="status__stats">
@@ -114,6 +117,12 @@ import MainSegment from "@components/shared/MainSegment.astro";
 		grid-column: 2 / 3;
 	}
 
+	.status__title-wrapper {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 14px;
+	}
+
 	.status__title {
 		display: inline-block;
 		font-size: 16px;
@@ -121,6 +130,7 @@ import MainSegment from "@components/shared/MainSegment.astro";
 		line-height: 26px;
 		color: var(--color-text-primary);
 		position: relative;
+		margin-bottom: 14px;
 	}
 
 	.status__title::before {
@@ -150,6 +160,7 @@ import MainSegment from "@components/shared/MainSegment.astro";
 		padding: 50px 0;
 		width: 100%;
 		max-width: 306px;
+		background-color: #f8f8f8;
 		transition: all 0.2s linear 0s;
 		cursor: pointer;
 	}
