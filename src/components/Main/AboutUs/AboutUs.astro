@@ -1,1 +1,22 @@
-about us
+---
+import Schematic from "@components/shared/Schematic.astro";
+import MainSegment from "@components/shared/MainSegment.astro";
+---
+
+<MainSegment>
+	<div class="content">about us</div>
+	<div class="schematic">
+		<Schematic />
+	</div>
+</MainSegment>
+
+<style>
+	.content {
+		background-color: red;
+		grid-column-start: 2;
+	}
+
+	.schematic {
+		background-color: blue;
+	}
+</style>

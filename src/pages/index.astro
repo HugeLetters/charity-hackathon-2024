@@ -18,7 +18,7 @@ import Shell from "@layouts/Shell.astro";
 	<header>
 		<Header />
 	</header>
-	<main class="main">
+	<main>
 		<Hero />
 		<LatestServices />
 		<AboutUs />
@@ -34,10 +34,3 @@ import Shell from "@layouts/Shell.astro";
 		<Footer />
 	</footer>
 </Shell>
-
-<style>
-	.main {
-		display: grid;
-		grid-template-columns: 1fr minmax(80rem, 1fr) 1fr;
-	}
-</style>
