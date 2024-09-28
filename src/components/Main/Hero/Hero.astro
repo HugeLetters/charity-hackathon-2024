@@ -1,11 +1,10 @@
 ---
 import Link from "@components/shared/Link.astro";
-import MainSegment from "@components/shared/MainSegment.astro";
 import { Image } from "astro:assets";
 import EngineerPng from "./img/cheerful-engineer.png";
 ---
 
-<MainSegment>
+<div>
 	<section class="hero">
 		<div class="hero__container">
 			<div class="hero__content">
@@ -22,6 +21,7 @@ import EngineerPng from "./img/cheerful-engineer.png";
 				</Link>
 			</div>
 			<div class="hero__image">
+				<div class="hero-img-bg"></div>
 				<div class="image">
 					<Image
 						src={EngineerPng}
@@ -30,46 +30,48 @@ import EngineerPng from "./img/cheerful-engineer.png";
 				</div>
 			</div>
 		</div>
-        <div class="rect-gradient"></div>
-        <div class="rect-gradient-2"></div>
+		<div class="corner-graidents">
+			<div class="rect-gradient"></div>
+			<div class="rect-gradient-2"></div>
+		</div>
 		<div class="crane"></div>
-        <div class="truck"></div>
+		<div class="truck"></div>
 	</section>
-</MainSegment>
+</div>
 
 <style>
 	.hero {
-		position: relative;
+		isolation: isolate;
 		grid-column: 1 / -1;
-		width: 100%;
-		height: 850px;
-        background: linear-gradient(180deg, rgba(14, 14, 14, 0.6) 0%, rgba(14, 14, 14, 0.9) 100%);
+		background: linear-gradient(
+			180deg,
+			rgba(14, 14, 14, 0.6) 0%,
+			rgba(14, 14, 14, 0.9) 100%
+		);
 		background-size: cover;
 		background-repeat: no-repeat;
+		padding-inline: 2rem;
+		position: relative;
+		overflow: hidden;
 	}
 
 	.hero__container {
-		position: relative;
-		display: flex;
-		justify-content: space-between;
-        padding-top: 56px;
-		/* padding: 56px 0 59px 0; */
-		width: 1625px;
-        height: inherit;
-		margin: 0 auto;
+		margin-inline: auto;
+		max-width: 100rem;
+		display: grid;
+		align-items: center;
+		padding-block: 4rem;
 	}
 
 	.hero__content {
-		padding-top: 142px;
-		padding-bottom: 199px;
 		width: 56%;
+		grid-area: 1 / -1;
 	}
 
 	.heading-1 {
 		margin-bottom: 6px;
 		font-family: var(--font-jost);
 		font-weight: 600;
-		/* font-size: 158px; */
 		font-size: 146px;
 		line-height: 138px;
 		color: #ffffff;
@@ -85,20 +87,28 @@ import EngineerPng from "./img/cheerful-engineer.png";
 	}
 
 	.hero__image {
-		position: relative;
-		width: 40%;
-        height: 722px;
+		grid-area: 1 / -1;
+		justify-self: end;
+		display: grid;
+		max-width: 40rem;
+		z-index: -1;
+		isolation: isolate;
+	}
+
+	.hero-img-bg {
+		grid-area: 1 / -1;
+		z-index: -1;
+		aspect-ratio: 85 / 100;
 		clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
+		border-bottom-left-radius: 10%;
+		border-bottom-right-radius: 10%;
 		background-color: var(--color-brand-primary);
-		border-radius: 10%;
-        border-top-right-radius: 0%;
 	}
 
 	.image {
-		position: absolute;
-		top: 0%;
-		left: 0%;
+		grid-area: 1 / -1;
 		width: 100%;
+		margin-top: auto;
 	}
 
 	.image img {
@@ -107,37 +117,51 @@ import EngineerPng from "./img/cheerful-engineer.png";
 		object-fit: contain;
 	}
 
-    .rect-gradient {
-        transform: rotate(35deg) translate(-153px, -100px);
-        width: 550px;
-        height: 65px;
-        background: rgb(97,52,9);
-        background: linear-gradient(116.01deg, rgba(251, 91, 17, 0.3) 3.33%, #0B0B0B 77.77%, rgba(11, 11, 11, 0) 96.38%);
-    }
+	.corner-graidents {
+		z-index: -2;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
 
-    .rect-gradient-2 {
-        transform: rotate(35deg) translate(-187px, -85px);
-        width: 500px;
-        height: 50px;
-        background: rgb(97,52,9);
-        background: linear-gradient(-155.09deg, rgba(251, 91, 17, 0.3) 1.71%, #0B0B0B 83.74%, rgba(11, 11, 11, 0) 95.82%);
-    }
+	.rect-gradient {
+		transform: translate(-6rem, -1rem) rotate(35deg);
+		width: 600px;
+		height: 6rem;
+		background: linear-gradient(
+			116.01deg,
+			rgba(251, 91, 17, 0.3) 3.33%,
+			#0b0b0b 77.77%
+		);
+	}
 
-    .truck {
-        width: 538px;
-        height: 346px;
-        background-image: url('img/hero-truck.png'); 
-        background-repeat: no-repeat;
-        background-size: cover;
-        transform: translate(660px, -555px);
-    }
+	.rect-gradient-2 {
+		transform: translate(-2.5rem, -2rem) rotate(35deg);
+		width: 300px;
+		height: 4rem;
+		background: linear-gradient(
+			-90deg,
+			rgba(251, 91, 17, 0.3) 1.71%,
+			#0b0b0b 83.74%,
+			rgba(50, 50, 50) 95.82%
+		);
+	}
 
-    .crane {
-        width: 78px;
-        height: 237px;
-        background-image: url('img/crane.png'); 
-        background-repeat: no-repeat;
-        background-size: cover;
-        transform: translate(45px, -115px);
-    }
+	.truck {
+		width: 538px;
+		height: 346px;
+		background-image: url("img/hero-truck.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: translate(660px, -555px);
+	}
+
+	.crane {
+		width: 78px;
+		height: 237px;
+		background-image: url("img/crane.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: translate(45px, -115px);
+	}
 </style>
