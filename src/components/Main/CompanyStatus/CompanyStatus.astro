@@ -5,48 +5,50 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 ---
 
 <script>
-	const animateStatusNumbers = function () {
-		const statusCounters = document.querySelectorAll("#statusNum");
-		const statusSpeed = 400;
+	const statusSection = document.getElementById("sectionStatus")!;
+	const STATUS_SPEED = 400;
 
-		statusCounters.forEach((counter) => {
-			const animate = () => {
-				const value = +counter.getAttribute("value");
-				const data = +counter.innerText;
-
-				const time = value / statusSpeed;
-				if (data < value) {
-					counter.innerText = Math.ceil(data + time);
-					setTimeout(animate, 1);
-				} else {
-					counter.innerText = value;
-				}
-			};
-			animate();
-		});
-	};
-
-	function showStatusNumbers() {
-		const statusSection = document.querySelector("#sectionStatus");
-		console.log(statusSection);
-
-		const options = {
-			root: null,
-			threshold: 0.3,
-			rootMargin: "-100px",
-		};
-
-		const myObserver = new IntersectionObserver(cb, options);
-		myObserver.observe(statusSection);
-
-		function cb(entries) {
+	const myObserver = new IntersectionObserver(
+		function (entries) {
 			const [entry] = entries;
+			if (!entry) {
+				return;
+			}
+
 			if (entry.isIntersecting) {
 				animateStatusNumbers();
+				myObserver.disconnect();
 			}
+		},
+		{ threshold: 0.3, rootMargin: "-100px" }
+	);
+	myObserver.observe(statusSection);
+
+	function animate(element: HTMLElement) {
+		const value = +(element.getAttribute("data-value") ?? 0);
+		const data = +(element.textContent ?? 0);
+
+		const time = value / STATUS_SPEED;
+		if (data < value) {
+			element.innerText = Math.ceil(data + time).toString();
+			requestAnimationFrame(() => animate(element));
+		} else {
+			element.innerText = value.toString();
 		}
 	}
-	showStatusNumbers();
+
+	function animateStatusNumbers() {
+		const statusCounters = statusSection.querySelectorAll(
+			"[data-id=status-num]"
+		);
+
+		statusCounters.forEach((counter) => {
+			if (!(counter instanceof HTMLElement)) {
+				return;
+			}
+			animate(counter);
+		});
+	}
 </script>
 
 <MainSegment>
@@ -67,37 +69,45 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 			<div class="status__stat">
 				<span
 					class="status__number"
-					id="statusNum"
-					value="110"
-					>0</span
-				><span>+</span>
+					data-id="status-num"
+					data-value="110"
+				>
+					0
+				</span>
+				<span>+</span>
 				<p class="status__number-descr">Completed projects</p>
 			</div>
 			<div class="status__stat">
 				<span
 					class="status__number"
-					id="statusNum"
-					value="280"
-					>0</span
-				><span>+</span>
+					data-id="status-num"
+					data-value="280"
+				>
+					0
+				</span>
+				<span>+</span>
 				<p class="status__number-descr">Team Member</p>
 			</div>
 			<div class="status__stat">
 				<span
 					class="status__number"
-					id="statusNum"
-					value="100"
-					>0</span
-				><span>%+</span>
+					data-id="status-num"
+					data-value="100"
+				>
+					0
+				</span>
+				<span>%+</span>
 				<p class="status__number-descr">Client Satisfaction</p>
 			</div>
 			<div class="status__stat">
 				<span
 					class="status__number"
-					id="statusNum"
-					value="30"
-					>0</span
-				><span>+</span>
+					data-id="status-num"
+					data-value="30"
+				>
+					0
+				</span>
+				<span>+</span>
 				<p class="status__number-descr">Running Project</p>
 			</div>
 		</div>
@@ -146,6 +156,10 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 
 	.status__stat:hover {
 		background-color: var(--color-brand-primary);
+	}
+
+	.status__number {
+		font-variant-numeric: tabular-nums;
 	}
 
 	.status__stat:hover .status__number,
