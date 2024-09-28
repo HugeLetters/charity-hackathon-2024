@@ -50,6 +50,7 @@ const { href, theme } = Astro.props;
 		color: white;
 	}
 
+	:global([data-link-group]):is(:hover, :focus-visible) a[data-theme="neutral"],
 	a[data-theme="neutral"]:is(:hover, :focus-visible) {
 		background: var(--color-brand-primary);
 		color: white;
@@ -63,7 +64,7 @@ const { href, theme } = Astro.props;
 	}
 
 	a:is(:hover, :focus-visible) .arrow {
-		transition-delay: 300ms, 0ms;
+		transition-delay: 400ms, 100ms;
 		translate: 3rem -3rem;
 		scale: 2;
 	}
