@@ -1,1 +1,210 @@
-how to process
+---
+import Schematic from "@components/shared/Schematic.astro";
+import MainSegment from "@components/shared/MainSegment.astro";
+import SectionTitle from "@components/shared/SectionTitle.astro";
+import { Image } from "astro:assets";
+import vid1 from "./img/vid1.jpg";
+import vid2 from "./img/vid1.jpg";
+import vid3 from "./img/vid1.jpg";
+---
+
+<script>
+	const tabs = document.querySelector("#process-tabs");
+	const tabsBtns = document.querySelectorAll(".tabs__btn");
+	const videoPlaceholder = document.querySelector(".media__vid-content");
+
+	tabs.addEventListener("click", function (event) {
+		if (event.target.classList.contains("tabs__btn")) {
+			event.preventDefault();
+			const activeEl = event.target;
+
+			tabsBtns.forEach((el) => {
+				el.classList.remove("tabs__btn--active");
+			});
+
+			activeEl.classList.add("tabs__btn--active");
+
+			// todo - Вот тут не пойму, как хотя бы картинки менять в зависимости от таба. С учетом того что они импортом идут
+			videoPlaceholder.src = activeEl.dataset.video;
+		}
+	});
+</script>
+
+<MainSegment>
+	<section class="process">
+		<div class="process__title-wrapper">
+			<SectionTitle>How To Process</SectionTitle>
+		</div>
+		<h3 class="process__subtitle">Steps in the Construction Process</h3>
+
+		<!-- Активный элемент (таб) - tabs__btn--active -->
+		<div
+			class="tabs"
+			id="process-tabs"
+		>
+			<button
+				class="tabs__btn"
+				data-video="vid1"
+				type="button"
+				>01. Planning and Design</button
+			>
+
+			<button
+				class="tabs__btn tabs__btn--active"
+				type="button"
+				data-video="vid2"
+				>02. Permitting and Approvals</button
+			>
+
+			<button
+				class="tabs__btn"
+				type="button"
+				data-video="vid3"
+				>03. Foundation Construction</button
+			>
+		</div>
+
+		<div class="media">
+			<div class="media__vid-wrapper">
+				<Image
+					class="media__vid-content"
+					alt="Video placeholder"
+					width="1296"
+					height="541"
+					src={vid1}
+				/>
+
+				<button
+					class="media__play-btn"
+					type="button"
+					><svg
+						width="21"
+						height="31"
+						viewBox="0 0 21 31"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M21 15.5L0 31V0L21 15.5Z"
+							fill="white"
+						></path>
+					</svg>
+					<span class="visually-hidden">Play video</span></button
+				>
+			</div>
+		</div>
+	</section>
+	<!-- <div class="media__vid">
+				<video
+					src="https://rutube.ru/video/049260ce5703e2d9dcadb6c48c596477/"
+					width="1296"
+					height="541"
+				></video>
+			</div>
+			<div class="media__vid">
+				<video
+					src="https://rutube.ru/video/f6ab9a1b10b23bca11631cd88c239ce0/"
+					width="1296"
+					height="541"
+				></video>
+			</div> -->
+</MainSegment>
+
+<div class="schematic">
+	<Schematic />
+</div>
+
+<style>
+	.process {
+		grid-column: 2 / 3;
+		width: 100%;
+		max-width: 1296px;
+
+		font-family: var(--font-jost);
+		color: var(--color-text-primary);
+		text-align: center;
+	}
+
+	.process__title-wrapper {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+
+	.process__subtitle {
+		font-size: 52px;
+		font-weight: 600;
+		line-height: 62px;
+		margin-bottom: 37px;
+	}
+
+	.tabs {
+		display: flex;
+		gap: 24px;
+		justify-content: space-between;
+		margin-bottom: 90px;
+	}
+
+	.tabs__btn {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 34px;
+		border: 1px solid rgba(85, 85, 85, 0.2);
+		padding: 23px 0;
+		flex: 1;
+	}
+
+	.tabs__btn--active {
+		position: relative;
+		background-color: var(--color-brand-primary);
+		color: #fff;
+		border: none;
+	}
+
+	.tabs__btn--active::after {
+		position: absolute;
+		content: "";
+		display: block;
+		left: 50%;
+		bottom: -12px;
+		width: 36px;
+		height: 12px;
+		transform: translateX(-50%);
+		background-color: var(--color-brand-primary);
+		clip-path: polygon(0 0, 100% 0, 50% 100%);
+	}
+
+	.media__vid-wrapper {
+		width: 100%;
+		max-width: 1296px;
+		position: relative;
+	}
+
+	.media__vid-content {
+		width: 100%;
+		height: 541px;
+		object-fit: cover;
+		/* background-color: var(--color-text-neutral-dark); */
+	}
+
+	.media__play-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 120px;
+		height: 120px;
+		background-color: var(--color-brand-primary);
+		border-radius: 50%;
+		transition: all 0.2s linear 0s;
+		z-index: 5;
+	}
+
+	.media__play-btn:hover {
+		transform: translate(-50%, -50%) scale(0.8);
+	}
+</style>
