@@ -1,1 +1,168 @@
-latest services
+---
+import SectionTitle from "@components/shared/SectionTitle.astro";
+import MainSegment from "@components/shared/MainSegment.astro";
+import Link from "@components/shared/Link.astro";
+---
+
+<MainSegment>
+	<div class='services__wrap'>
+		<div class='services__intro'>
+			<SectionTitle>
+				<h2 class='services__title'>Latest Services</h2>
+			</SectionTitle>
+			<!-- todo: выровнять черту по центру, добавить изображение в фон -->
+
+			<div class='services__headline'>The Best Services For You.</div>
+			<div class='sevices__caption'>
+				In today's world, we're bombarded with choices. From streaming
+				services to meal kits, it +can be overwhelming to find the best
+				option.
+			</div>
+			<Link
+				theme='neutral'
+				href='todo'
+			>
+				See All
+			</Link>
+		</div>
+		<!--todo: сгенерировать текст -->
+		<div class='services__slider'>
+			<ul class='slider__slides'>
+				<li class='slider__slide slider__slide-first'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h3 class='slide__title'>
+								Building Contraction
+							</h3></a
+						>
+						<p class='slide__text'>
+							This involves various stages like planning, design,
+						</p>
+					</div>
+				</li>
+				<li class='slider__slide slider__slide-second'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h3 class='slide__title'>
+								Building Contraction
+							</h3></a
+						>
+						<p class='slide__text'>
+							This involves various stages like planning, design,
+						</p>
+					</div>
+				</li>
+				<li class='slider__slide slider__slide-third'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h3 class='slide__title'>
+								Building Contraction
+							</h3></a
+						>
+						<p class='slide__text'>
+							This involves various stages like planning, design,
+						</p>
+					</div>
+				</li>
+				<li class='slider__slide slider__slide-fourth'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h3 class='slide__title'>
+								Building Contraction
+							</h3></a
+						>
+						<p class='slide__text'>
+							This involves various stages like planning, design,
+						</p>
+					</div>
+				</li>
+				<li class='slider__slide slider__slide-fifth'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h3 class='slide__title'>
+								Building Contraction
+							</h3></a
+						>
+						<p class='slide__text'>
+							This involves various stages like planning, design,
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</MainSegment>
+<style>
+	.services__wrap {
+		display: flex;
+		align-items: flex-start;
+		wrap: nowrap;
+		background-color: white;
+		grid-column: 2/3;
+		grid-row: 3/4;
+	}
+	.services__intro {
+		max-width: 28rem;
+		margin-right: 7rem;
+	}
+	.services__title {
+		margin-bottom: 1rem;
+	}
+	.services__headline {
+		font-size: 3rem;
+		font-weight: 600;
+		line-height: 4rem;
+	}
+	.sevices__caption {
+		margin-bottom: 1.6rem;
+	}
+	.services__slider {
+		display: flex;
+	}
+	.slider__slides {
+		display: flex;
+		max-width: 46rem;
+		max-height: 47rem;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		wrap: nowrap;
+	}
+	.slider__slide {
+		width: 19rem;
+		height: 26rem;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.slide__content {
+		margin: 16rem 3.6rem 1.5rem 2rem;
+		color: #ffffff;
+	}
+	.slide__title {
+		margin-bottom: 0.8rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+		text-decoration: underline;
+	}
+	.slide__text {
+		text-overflow: clip;
+	}
+	.slider__slide-first {
+		background-image: url("img/service-1.png");
+	}
+	.slider__slide-second {
+		background-image: url("img/service-2.png");
+	}
+	.slider__slide-third {
+		background-image: url("img/service-3.png");
+	}
+	.slider__slide-fourth {
+		background-image: url("img/service-4.png");
+	}
+	.slider__slide-fifth {
+		background-image: url("img/service-5.png");
+	}
+	.slider__slide img {
+		width: 19rem;
+		height: 26rem;
+	}
+</style>

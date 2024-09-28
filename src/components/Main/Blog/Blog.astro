@@ -1,1 +1,462 @@
-blog
+---
+import Schematic from "@components/shared/Schematic.astro";
+import MainSegment from "@components/shared/MainSegment.astro";
+import SectionTitle from "@components/shared/SectionTitle.astro";
+import Link from "@components/shared/Link.astro";
+import { Image } from "astro:assets";
+import Art1 from "./img/art_1.jpg";
+import Art2 from "./img/art_2.jpg";
+import Art3 from "./img/art_3.jpg";
+import Art4 from "./img/art_4.jpg";
+---
+
+<!-- Не сделано:
+1. todo - Открытие постов в отдельных модалках
+2. todo - Подгрузка постов при нажатии на кнопку -->
+<MainSegment>
+	<div class="schematic">
+		<Schematic />
+	</div>
+	<section class="blog">
+		<div class="blog__title-wrapper">
+			<SectionTitle>Our Blog</SectionTitle>
+		</div>
+		<h3 class="blog__subtitle">Latest Insights and Updates</h3>
+
+		<div class="blog-top">
+			<article class="main-article">
+				<div class="main-article__text-content">
+					<p class="article__category">
+						<a
+							class="article__category--main"
+							href="#"
+							>By Admin</a
+						>
+
+						<a
+							class="article__category--secondary"
+							href="#"
+							>Building</a
+						>
+					</p>
+					<h4 class="main-article__title">
+						Stay Up-To-Date With The Latest Happenings.
+					</h4>
+					<p class="main-article__text">
+						Stay informed with our regular updates on significant events,
+						regulatory changes, and market trends. We cover a wide range of
+						topics, from new technological.
+					</p>
+					<button
+						class="article__modal-btn"
+						type="button"
+						>Read More <svg
+							width="26"
+							height="8"
+							viewBox="0 0 26 8"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1 4.5C0.723858 4.5 0.5 4.27614 0.5 4C0.5 3.72386 0.723858 3.5 1 3.5L1 4.5ZM25.3536 3.64645C25.5488 3.84171 25.5488 4.15829 25.3536 4.35355L22.1716 7.53553C21.9763 7.7308 21.6597 7.7308 21.4645 7.53553C21.2692 7.34027 21.2692 7.02369 21.4645 6.82843L24.2929 4L21.4645 1.17157C21.2692 0.976311 21.2692 0.659728 21.4645 0.464466C21.6597 0.269204 21.9763 0.269204 22.1716 0.464466L25.3536 3.64645ZM1 3.5L25 3.5V4.5L1 4.5L1 3.5Z"
+								fill="currentColor"
+							></path>
+						</svg>
+					</button>
+				</div>
+
+				<div class="main-article__media">
+					<Image
+						class="main-article__img"
+						alt="Workers stand in front of the construction site"
+						width="636"
+						height="361"
+						src={Art4}
+					/>
+
+					<time
+						class="main-article__date"
+						datetime="2024-06-29"
+						>29 Jun<br />2024</time
+					>
+				</div>
+			</article>
+		</div>
+		<!-- todo - обернуть карточки в ссылки (а нужно ли?) -->
+		<div class="blog-bottom">
+			<article class="article">
+				<div class="article__img-wrapper">
+					<Image
+						class="article__img"
+						alt="3 workers look at the ruler"
+						width="356"
+						height="300"
+						src={Art1}
+					/>
+
+					<time
+						class="article__date"
+						datetime="2024-06-24"
+						>24 Jun<br />2024</time
+					>
+				</div>
+				<p class="article__category">
+					<a
+						class="article__category--main"
+						href="#"
+						>By Admin</a
+					>
+
+					<a
+						class="article__category--secondary"
+						href="#"
+						>Building</a
+					>
+				</p>
+				<h4 class="article__title">
+					Practical advice and building step-by-step.
+				</h4>
+				<button
+					class="article__modal-btn"
+					type="button"
+					>Read More <svg
+						width="26"
+						height="8"
+						viewBox="0 0 26 8"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M1 4.5C0.723858 4.5 0.5 4.27614 0.5 4C0.5 3.72386 0.723858 3.5 1 3.5L1 4.5ZM25.3536 3.64645C25.5488 3.84171 25.5488 4.15829 25.3536 4.35355L22.1716 7.53553C21.9763 7.7308 21.6597 7.7308 21.4645 7.53553C21.2692 7.34027 21.2692 7.02369 21.4645 6.82843L24.2929 4L21.4645 1.17157C21.2692 0.976311 21.2692 0.659728 21.4645 0.464466C21.6597 0.269204 21.9763 0.269204 22.1716 0.464466L25.3536 3.64645ZM1 3.5L25 3.5V4.5L1 4.5L1 3.5Z"
+							fill="currentColor"
+						></path>
+					</svg>
+				</button>
+			</article>
+
+			<article class="article">
+				<div class="article__img-wrapper">
+					<Image
+						class="article__img"
+						alt="3 workers look at the ruler"
+						width="356"
+						height="300"
+						src={Art2}
+					/>
+
+					<time
+						class="article__date"
+						datetime="2024-07-25"
+						>25 Jul<br />2024</time
+					>
+				</div>
+				<p class="article__category">
+					<a
+						class="article__category--main"
+						href="#"
+						>By Admin</a
+					>
+
+					<a
+						class="article__category--secondary"
+						href="#"
+						>Building</a
+					>
+				</p>
+				<h4 class="article__title">
+					Insights perspective industry from our team.
+				</h4>
+				<button
+					class="article__modal-btn"
+					type="button"
+					>Read More <svg
+						width="26"
+						height="8"
+						viewBox="0 0 26 8"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M1 4.5C0.723858 4.5 0.5 4.27614 0.5 4C0.5 3.72386 0.723858 3.5 1 3.5L1 4.5ZM25.3536 3.64645C25.5488 3.84171 25.5488 4.15829 25.3536 4.35355L22.1716 7.53553C21.9763 7.7308 21.6597 7.7308 21.4645 7.53553C21.2692 7.34027 21.2692 7.02369 21.4645 6.82843L24.2929 4L21.4645 1.17157C21.2692 0.976311 21.2692 0.659728 21.4645 0.464466C21.6597 0.269204 21.9763 0.269204 22.1716 0.464466L25.3536 3.64645ZM1 3.5L25 3.5V4.5L1 4.5L1 3.5Z"
+							fill="currentColor"
+						></path>
+					</svg>
+				</button>
+			</article>
+
+			<article class="article">
+				<div class="article__img-wrapper">
+					<Image
+						class="article__img"
+						alt="3 workers look at the ruler"
+						width="356"
+						height="300"
+						src={Art3}
+					/>
+
+					<time
+						class="article__date"
+						datetime="2024-09-28"
+						>28 Sep<br />2024</time
+					>
+				</div>
+				<p class="article__category">
+					<a
+						class="article__category--main"
+						href="#"
+						>By Admin</a
+					>
+
+					<a
+						class="article__category--secondary"
+						href="#"
+						>Building</a
+					>
+				</p>
+				<h4 class="article__title">
+					Most Successful Projects Best Building Case Studies.
+				</h4>
+				<button
+					class="article__modal-btn"
+					type="button"
+					>Read More <svg
+						width="26"
+						height="8"
+						viewBox="0 0 26 8"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M1 4.5C0.723858 4.5 0.5 4.27614 0.5 4C0.5 3.72386 0.723858 3.5 1 3.5L1 4.5ZM25.3536 3.64645C25.5488 3.84171 25.5488 4.15829 25.3536 4.35355L22.1716 7.53553C21.9763 7.7308 21.6597 7.7308 21.4645 7.53553C21.2692 7.34027 21.2692 7.02369 21.4645 6.82843L24.2929 4L21.4645 1.17157C21.2692 0.976311 21.2692 0.659728 21.4645 0.464466C21.6597 0.269204 21.9763 0.269204 22.1716 0.464466L25.3536 3.64645ZM1 3.5L25 3.5V4.5L1 4.5L1 3.5Z"
+							fill="currentColor"
+						></path>
+					</svg>
+				</button>
+			</article>
+		</div>
+		<div class="btn-wrapper">
+			<Link
+				theme="primary"
+				href="#"
+			>
+				Read More
+			</Link>
+		</div>
+	</section>
+</MainSegment>
+
+<style>
+	.blog {
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+
+		font-family: var(--font-jost);
+		font-weight: 400;
+		color: var(--color-text-primary);
+		text-align: center;
+	}
+
+	.blog__title-wrapper {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+
+	.blog__subtitle {
+		font-size: 52px;
+		font-weight: 600;
+		line-height: 62px;
+		margin-bottom: 67px;
+	}
+
+	.blog-top {
+		margin-bottom: 30px;
+	}
+
+	.blog-bottom {
+		display: flex;
+		justify-content: space-between;
+		gap: 24px;
+		margin-bottom: 42px;
+	}
+
+	.main-article {
+		display: flex;
+		justify-content: space-between;
+		text-align: left;
+	}
+
+	.main-article__text-content {
+		max-width: 460px;
+	}
+
+	.main-article .article__category {
+		margin-bottom: 13px;
+	}
+
+	.main-article__title {
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 42px;
+		margin-bottom: 12px;
+	}
+
+	.main-article__text {
+		font-size: 16px;
+		line-height: 26px;
+		color: var(--color-text-neutral-dark);
+		margin-bottom: 37px;
+	}
+
+	.main-article__media {
+		position: relative;
+	}
+
+	.main-article__date,
+	.article__date {
+		position: absolute;
+		background-color: var(--color-brand-primary);
+		text-align: center;
+		font-family: var(--font-barlow);
+		color: #fff;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 90% 85%, 0 100%, 0 0);
+	}
+
+	.main-article__date {
+		font-size: 24px;
+		line-height: 34px;
+		padding: 24px 30px 30px 30px;
+		top: 10px;
+		left: -73px;
+	}
+
+	.article__date {
+		font-size: 16px;
+		line-height: 26px;
+		padding: 8px 13px;
+		right: 10px;
+		bottom: 24px;
+		opacity: 0;
+		transition: all 0.2s linear 0s;
+	}
+
+	.main-article__img,
+	.article__img {
+		width: 636px;
+		height: 361px;
+		object-fit: cover;
+	}
+
+	.article {
+		flex: 1;
+		padding: 30px 30px 23px 30px;
+		outline: 1px solid #d8d8d8;
+		text-align: left;
+	}
+
+	.article:hover,
+	.article:hover .article__date {
+		outline: none;
+		opacity: 1;
+	}
+
+	.article:hover .article__modal-btn,
+	.article:hover .article__modal-btn svg,
+	.main-article:hover .article__modal-btn,
+	.main-article:hover .article__modal-btn svg {
+		color: var(--color-brand-primary);
+		fill: var(--color-brand-primary);
+		transform: scale(1.05);
+	}
+
+	.article__img-wrapper {
+		margin-bottom: 22px;
+		position: relative;
+	}
+
+	.article__img {
+		width: 100%;
+		max-width: 356px;
+		height: 300px;
+	}
+
+	.article__category {
+		margin-bottom: 17px;
+	}
+
+	.article__category--main,
+	.article__category--secondary {
+		font-family: var(--font-barlow);
+		font-size: 16px;
+		line-height: 26px;
+		color: var(--color-text-neutral-dark);
+		position: relative;
+		transition: all 0.2s linear 0s;
+	}
+
+	.article__category--main {
+		padding-left: 41px;
+		margin-right: 16px;
+	}
+
+	.article__category--main::before {
+		position: absolute;
+		content: "";
+		display: block;
+		background-color: var(--color-text-primary);
+		width: 31px;
+		height: 1px;
+		left: 0;
+		top: 50%;
+	}
+
+	.article__category--secondary {
+		padding-left: 16px;
+	}
+
+	.article__category--secondary::before {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 6px;
+		height: 6px;
+		background-color: var(--color-text-primary);
+		border-radius: 50%;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.article__category--main:hover,
+	.article__category--secondary:hover {
+		color: var(--color-brand-primary);
+	}
+
+	.article__category--main:hover:before,
+	.article__category--secondary:hover:before {
+		background-color: var(--color-brand-primary);
+	}
+
+	.article__title {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 34px;
+		margin-bottom: 14px;
+	}
+
+	.article__modal-btn {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 26px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		transition: all 0.2s linear 0s;
+	}
+
+	.btn-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+</style>
