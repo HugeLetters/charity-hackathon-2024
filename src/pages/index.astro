@@ -18,8 +18,7 @@ import Shell from "@layouts/Shell.astro";
 	<header>
 		<Header />
 	</header>
-	<!-- todo - grid layout for main block - thin wide thin -->
-	<main>
+	<main class="main">
 		<Hero />
 		<LatestServices />
 		<AboutUs />
@@ -37,7 +36,8 @@ import Shell from "@layouts/Shell.astro";
 </Shell>
 
 <style>
-	main {
-		padding: 1rem;
+	.main {
+		display: grid;
+		grid-template-columns: 1fr minmax(80rem, 1fr) 1fr;
 	}
 </style>
