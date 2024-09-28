@@ -1,6 +1,11 @@
 :root {
-	--brand-primary: #fb5b11;
-	--text-primary: #0e0e0e;
-	--text-neutral: #cdcdcd;
-	--text-neutral-dark: #555555;
+	--color-brand-primary: #fb5b11;
+	--color-text-primary: #0e0e0e;
+	--color-text-neutral: #cdcdcd;
+	--color-text-neutral-dark: #555555;
+
+	--font-sans-serif: ui-sans-serif, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-jost: Jost, var(--font-sans-serif, sans-serif);
+	--font-barlow: Barlow, var(--font-sans-serif, sans-serif);
 }
