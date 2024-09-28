@@ -1,0 +1,10 @@
+---
+interface Props {
+	direction: "left" | "right";
+}
+const { direction } = Astro.props;
+---
+
+<div>
+	{direction === "left" ? "<-" : "->"}
+</div>

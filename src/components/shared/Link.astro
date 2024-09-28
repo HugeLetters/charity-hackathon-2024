@@ -1,0 +1,28 @@
+---
+interface Props {
+	theme: "neural" | "primary";
+	href: string;
+}
+
+const { href, theme } = Astro.props;
+---
+
+<a
+	href={href}
+	data-theme={theme}
+>
+	<slot />
+	->
+</a>
+
+<style>
+	a[data-theme="neutral"] {
+		background: white;
+		color: black;
+	}
+
+	a[data-theme="primary"] {
+		background: orange;
+		color: white;
+	}
+</style>
