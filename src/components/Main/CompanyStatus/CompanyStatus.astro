@@ -5,8 +5,10 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 ---
 
 <script>
-	const statusSection = document.getElementById("sectionStatus")!;
 	const STATUS_SPEED = 400;
+
+	const statusSection = document.getElementById("sectionStatus")!;
+	const statusCounters = statusSection.querySelectorAll("[data-id=status-num]");
 
 	const myObserver = new IntersectionObserver(
 		function (entries) {
@@ -38,10 +40,6 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 	}
 
 	function animateStatusNumbers() {
-		const statusCounters = statusSection.querySelectorAll(
-			"[data-id=status-num]"
-		);
-
 		statusCounters.forEach((counter) => {
 			if (!(counter instanceof HTMLElement)) {
 				return;
