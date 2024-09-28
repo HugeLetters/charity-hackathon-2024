@@ -1,26 +1,43 @@
 ---
-import Example from "@components/Example.astro";
+import Footer from "@components/Footer/Footer.astro";
+import Header from "@components/Header/Header.astro";
+import AboutUs from "@components/Main/AboutUs/AboutUs.astro";
+import Blog from "@components/Main/Blog/Blog.astro";
+import CompanyStatus from "@components/Main/CompanyStatus/CompanyStatus.astro";
+import Hero from "@components/Main/Hero/Hero.astro";
+import HowToProcess from "@components/Main/HowToProcess/HowToProcess.astro";
+import LatestServices from "@components/Main/LatestServices/LatestServices.astro";
+import Pricing from "@components/Main/Pricing/Pricing.astro";
+import Projects from "@components/Main/Projects/Projects.astro";
+import Team from "@components/Main/Team/Team.astro";
+import Testimonial from "@components/Main/Testimonial/Testimonial.astro";
 import Shell from "@layouts/Shell.astro";
 ---
 
 <Shell>
+	<header>
+		<Header />
+	</header>
+	<!-- todo - grid layout for main block - thin wide thin -->
 	<main>
-		<div>Blank Page!</div>
-		<Example title="example 1"><div class="slot-data">slot data 1</div></Example
-		>
-		<Example title="example 2"><div class="slot-data">slot data 2</div></Example
-		>
-		<Example title="example 3"><div class="slot-data">slot data 3</div></Example
-		>
+		<Hero />
+		<LatestServices />
+		<AboutUs />
+		<CompanyStatus />
+		<Projects />
+		<HowToProcess />
+		<Testimonial />
+		<Team />
+		<Pricing />
+		<Blog />
 	</main>
+	<footer>
+		<Footer />
+	</footer>
 </Shell>
 
 <style>
 	main {
 		padding: 1rem;
-	}
-
-	.slot-data {
-		color: red;
 	}
 </style>
