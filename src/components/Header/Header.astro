@@ -1,1 +1,435 @@
-header
+---
+import { Image } from "astro:assets";
+import logo from "../Footer/img/logo.svg";
+---
+
+<!-- todo - Добавить общий паддинг для шапки, чтобы контент к краям экрана не прилипал хотя бы на пк --><!-- todo - Адаптив.. Не знаю, что тут делать с адаптивом, возможно полностью убирать левую оранжевую область, и запихивать все в бургер -->
+<div class="header-wrapper">
+	<div class="header__inner">
+		<div class="logo-wrapper">
+			<a
+				class="logo"
+				href="#"
+			>
+				<Image
+					class="logo-img"
+					alt="Conbuild logo"
+					width="221"
+					height="75"
+					src={logo}
+				/>
+			</a>
+		</div>
+
+		<div class="top">
+			<adress class="adress">2464 Royal Ln. Mesa, New York</adress>
+
+			<a
+				class="mail"
+				href="mailto:info@golzergmail.com"
+				>info@golzergmail.com</a
+			>
+
+			<p class="opening-hours">Mon - Sat <time>8:00 - 18:20</time></p>
+			<ul class="socials-list">
+				<!-- todo - Поправить иконку фейсбука и цвета + ховер эффекты -->
+				<!-- todo - Прижать блок с социалаками право -->
+				<li class="socials-item">
+					<a
+						class="socials-link"
+						href="#"
+						><svg
+							class="icon-facebook"
+							fill="currentColor"
+							width="24px"
+							height="24px"
+							viewBox="0 0 24 24"
+							id="facebook"
+							data-name="Flat Color"
+							xmlns="http://www.w3.org/2000/svg"
+							class="icon flat-color"
+							><path
+								id="primary"
+								d="M14,6h3a1,1,0,0,0,1-1V3a1,1,0,0,0-1-1H14A5,5,0,0,0,9,7v3H7a1,1,0,0,0-1,1v2a1,1,0,0,0,1,1H9v7a1,1,0,0,0,1,1h2a1,1,0,0,0,1-1V14h2.22a1,1,0,0,0,1-.76l.5-2a1,1,0,0,0-1-1.24H13V7A1,1,0,0,1,14,6Z"
+								style="fill: currentColor;"
+							></path></svg
+						>
+						<span class="visually-hidden">Facebook</span></a
+					>
+				</li>
+
+				<li class="socials-item">
+					<a
+						class="socials-link"
+						href="#"
+						><svg
+							class="icon-instagram"
+							width="800px"
+							height="800px"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+								fill="currentColor"
+							></path>
+							<path
+								d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+								fill="currentColor"
+							></path>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+								fill="currentColor"
+							></path>
+						</svg>
+						<span class="visually-hidden">Instagram</span></a
+					>
+				</li>
+
+				<li class="socials-item">
+					<a
+						class="socials-link"
+						href="#"
+						><svg
+							class="icon-twitter"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							version="1.1"
+						>
+							<path
+								d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+								fill="currentColor"
+							></path>
+						</svg>
+						<span class="visually-hidden">X</span></a
+					>
+				</li>
+
+				<li class="socials-item">
+					<a
+						class="socials-link"
+						href="#"
+						><svg
+							class="icon-linkedin"
+							width="800px"
+							height="800px"
+							viewBox="0 0 20 20"
+							version="1.1"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+						>
+							<title>linkedin [#161]</title>
+							<desc>Created with Sketch.</desc>
+							<defs> </defs>
+							<g
+								id="Page-1"
+								stroke="none"
+								stroke-width="1"
+								fill="none"
+								fill-rule="evenodd"
+							>
+								<g
+									id="Dribbble-Light-Preview"
+									transform="translate(-180.000000, -7479.000000)"
+									fill="currentColor"
+								>
+									<g
+										id="icons"
+										transform="translate(56.000000, 160.000000)"
+									>
+										<path
+											d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z"
+											id="linkedin-[#161]"
+										>
+										</path>
+									</g>
+								</g>
+							</g>
+						</svg>
+						<span class="visually-hidden">Linkedin</span></a
+					>
+				</li>
+			</ul>
+		</div>
+
+		<div class="bottom">
+			<ul class="links-list">
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Home</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>About</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Projects</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Testimonials</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Team</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Pricing</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Blog</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Contact</a
+					>
+				</li>
+			</ul>
+		</div>
+
+		<div class="cta">
+			<!-- todo - Добавить ховер на кнопку звонка и, возможно, на ссылку с номером -->
+			<a
+				class="cta__call-btn"
+				href="tel:77045550127"
+				><svg
+					class="icon-call"
+					width="60"
+					height="60"
+					viewBox="0 0 60 60"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<rect
+						width="60"
+						height="60"
+						fill="currentColor"
+					></rect>
+					<path
+						d="M30.8008 20.8347C30.8008 20.6137 30.8886 20.4017 31.0448 20.2454C31.2011 20.0891 31.4131 20.0013 31.6341 20.0013C33.8435 20.0038 35.9617 20.8825 37.524 22.4448C39.0863 24.0071 39.965 26.1253 39.9674 28.3347C39.9674 28.5557 39.8796 28.7676 39.7234 28.9239C39.5671 29.0802 39.3551 29.168 39.1341 29.168C38.9131 29.168 38.7011 29.0802 38.5448 28.9239C38.3886 28.7676 38.3008 28.5557 38.3008 28.3347C38.2988 26.5672 37.5958 24.8726 36.346 23.6228C35.0961 22.373 33.4016 21.67 31.6341 21.668C31.4131 21.668 31.2011 21.5802 31.0448 21.4239C30.8886 21.2676 30.8008 21.0557 30.8008 20.8347ZM31.6341 25.0013C32.5182 25.0013 33.366 25.3525 33.9911 25.9776C34.6162 26.6028 34.9674 27.4506 34.9674 28.3347C34.9674 28.5557 35.0552 28.7676 35.2115 28.9239C35.3678 29.0802 35.5798 29.168 35.8008 29.168C36.0218 29.168 36.2337 29.0802 36.39 28.9239C36.5463 28.7676 36.6341 28.5557 36.6341 28.3347C36.6328 27.009 36.1056 25.738 35.1682 24.8006C34.2308 23.8632 32.9598 23.336 31.6341 23.3347C31.4131 23.3347 31.2011 23.4225 31.0448 23.5787C30.8886 23.735 30.8008 23.947 30.8008 24.168C30.8008 24.389 30.8886 24.601 31.0448 24.7573C31.2011 24.9135 31.4131 25.0013 31.6341 25.0013ZM39.2116 33.9505C39.6945 34.4348 39.9657 35.0908 39.9657 35.7747C39.9657 36.4586 39.6945 37.1146 39.2116 37.5988L38.4533 38.473C31.6283 45.0072 15.0199 28.403 21.4533 21.5563L22.4116 20.723C22.8964 20.2536 23.5465 19.9939 24.2214 20.0001C24.8962 20.0063 25.5414 20.278 26.0174 20.7563C26.0433 20.7822 27.5874 22.788 27.5874 22.788C28.0456 23.2694 28.3007 23.9088 28.2996 24.5733C28.2985 25.2379 28.0414 25.8765 27.5816 26.3563L26.6166 27.5697C27.1506 28.8673 27.9358 30.0465 28.927 31.0397C29.9182 32.033 31.0959 32.8205 32.3924 33.3572L33.6133 32.3863C34.0932 31.9269 34.7317 31.6701 35.396 31.6691C36.0604 31.6682 36.6996 31.9233 37.1808 32.3813C37.1808 32.3813 39.1858 33.9247 39.2116 33.9505ZM38.0649 35.1622C38.0649 35.1622 36.0708 33.628 36.0449 33.6022C35.8733 33.4319 35.6413 33.3364 35.3995 33.3364C35.1578 33.3364 34.9258 33.4319 34.7541 33.6022C34.7316 33.6255 33.0508 34.9647 33.0508 34.9647C32.9375 35.0548 32.8027 35.1139 32.6596 35.1361C32.5166 35.1583 32.3702 35.1429 32.2349 35.0913C30.5553 34.466 29.0297 33.4869 27.7615 32.2206C26.4932 30.9542 25.5119 29.43 24.8841 27.7513C24.8284 27.6142 24.8103 27.4647 24.8315 27.3183C24.8528 27.1718 24.9126 27.0337 25.0049 26.918C25.0049 26.918 26.3441 25.2363 26.3666 25.2147C26.5368 25.043 26.6323 24.811 26.6323 24.5692C26.6323 24.3275 26.5368 24.0955 26.3666 23.9238C26.3408 23.8988 24.8066 21.903 24.8066 21.903C24.6324 21.7468 24.4049 21.6631 24.171 21.6691C23.937 21.6752 23.7142 21.7705 23.5483 21.9355L22.5899 22.7688C17.8883 28.4222 32.2808 42.0163 37.2349 37.3347L37.9941 36.4597C38.172 36.2949 38.2789 36.0674 38.2921 35.8252C38.3053 35.5831 38.2238 35.3453 38.0649 35.1622Z"
+						fill="white"
+					></path>
+				</svg>
+				<span class="visually-hidden">Make a call</span></a
+			>
+
+			<div class="cta__content">
+				<p class="cta__title">Call Us Any Time</p>
+				<a
+					class="cta__call"
+					href="tel:77045550127"
+					>(704) 555-0127<span class="visually-hidden">Make a call</span></a
+				>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.header-wrapper {
+		background-color: var(--color-text-primary);
+	}
+
+	.header__inner {
+		color: #fff;
+		font-family: var(--font-barlow);
+		font-size: 16px;
+		line-height: 26px;
+
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+
+		display: grid;
+		grid-template-areas:
+			"logo top cta"
+			"logo bottom cta";
+	}
+
+	/* LOGO */
+	.logo-wrapper {
+		grid-area: logo;
+		align-content: center;
+		padding-right: 264px;
+		position: relative;
+	}
+
+	.logo-wrapper::after {
+		position: absolute;
+		content: "";
+		display: block;
+		left: 0;
+		top: 0;
+		height: 156px;
+		width: 578px;
+		background-image: url("img/header-bg.svg");
+		background-repeat: no-repeat;
+		background-position: left top;
+		z-index: 5;
+	}
+
+	.logo {
+		display: inline-block;
+		position: relative;
+		z-index: 10;
+	}
+
+	.logo-img {
+		width: 221px;
+		height: 75px;
+	}
+
+	/* TOP */
+	.top {
+		grid-area: top;
+		font-size: 14px;
+		line-height: 24px;
+		color: var(--color-text-neutral);
+		padding: 16px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.adress {
+		padding-left: 17px;
+		background-image: url("img/key.svg");
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 8px 16px;
+		margin-left: 42px;
+	}
+
+	.mail {
+		padding-left: 21px;
+		background-image: url("img/mail.svg");
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 12px 11px;
+		margin-left: 42px;
+	}
+
+	.opening-hours {
+		padding-left: 21px;
+		background-image: url("img/clock.svg");
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 12px 12px;
+		margin-left: 42px;
+
+		display: inline-block;
+	}
+
+	.socials-list {
+		display: inline-flex;
+		gap: 20px;
+		max-width: 96px;
+		margin-left: auto;
+		align-items: center;
+	}
+
+	.icon-facebook {
+		width: 6px;
+		height: 10px;
+	}
+
+	.icon-instagram,
+	.icon-twitter,
+	.icon-linkedin {
+		width: 10px;
+		height: 10px;
+	}
+
+	/* BOTTOM */
+	.bottom {
+		grid-area: bottom;
+		padding: 30px 0 32px;
+	}
+
+	.links-list {
+		display: flex;
+		gap: 30px;
+		margin-left: 42px;
+	}
+
+	.link {
+		font-weight: 700;
+		line-height: 26px;
+		position: relative;
+		transition: all 0.2s linear 0s;
+	}
+
+	.link:hover {
+		color: var(--color-brand-primary);
+	}
+
+	.link:hover:before {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 4px;
+		background-color: var(--color-brand-primary);
+		left: 0;
+		bottom: -37px;
+	}
+
+	/* CTA */
+	.cta {
+		grid-area: cta;
+		display: flex;
+		gap: 14px;
+		align-items: center;
+		padding-left: 23px;
+		border-left: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.cta__call-btn {
+	}
+
+	.icon-call rect {
+		fill: var(--color-brand-primary);
+	}
+
+	.cta__title {
+		font-family: var(--font-jost);
+		font-size: 14px;
+		line-height: 24px;
+		color: var(--color-text-neutral);
+	}
+
+	.cta__call {
+		font-size: 16px;
+		line-height: 26px;
+		font-weight: 600;
+	}
+</style>
