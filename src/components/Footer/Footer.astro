@@ -1,1 +1,380 @@
-footer
+---
+import { Image } from "astro:assets";
+import logo from "./img/logo.svg";
+---
+
+<div class="footer__inner">
+	<iframe
+		class="footer-map"
+		class="footer-map__frame"
+		src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14599.694508120036!2d90.39411249150722!3d23.821314692036534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1727542174807!5m2!1sru!2sru"
+		width="600"
+		height="450"
+		style="border:0;"
+		allowfullscreen=""
+		loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"
+	></iframe>
+
+	<form
+		class="form"
+		action="#"
+		method="post"
+	>
+		<label
+			class="form__title"
+			for="Email"
+		>
+			Sign Up For Our Newsletter<br />
+			To Get Weekly Updates.
+		</label>
+
+		<div class="form__input-wrapper">
+			<input
+				class="form__input"
+				type="text"
+				id="Email"
+				placeholder="Inter Your Email"
+			/>
+
+			<button
+				class="form__submit-btn"
+				type="submit"
+				><svg
+					width="12"
+					height="12"
+					viewBox="0 0 12 12"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M0.642969 10.3345C0.445786 10.5279 0.445786 10.8413 0.642969 11.0346C0.840152 11.2279 1.15985 11.2279 1.35703 11.0346L0.642969 10.3345ZM11.5049 0.88034C11.5049 0.606941 11.2789 0.385307 11 0.385307L6.45574 0.385308C6.17688 0.385308 5.95082 0.606942 5.95082 0.880341C5.95082 1.15374 6.17688 1.37537 6.45574 1.37537L10.4951 1.37537L10.4951 5.33564C10.4951 5.60904 10.7211 5.83067 11 5.83067C11.2789 5.83067 11.5049 5.60904 11.5049 5.33564L11.5049 0.88034ZM1.35703 11.0346L11.357 1.23038L10.643 0.530299L0.642969 10.3345L1.35703 11.0346Z"
+						fill="#FB5B11"
+					></path>
+				</svg>
+				<span class="visually-hidden">Send email</span></button
+			>
+		</div>
+	</form>
+
+	<div class="footer-info">
+		<div class="info-wrapper">
+			<div class="info">
+				<a
+					class="info__logo"
+					href="#"
+				>
+					<Image
+						class="info__logo-img"
+						alt="Conbuild logo"
+						width="221"
+						height="75"
+						src={logo}
+					/>
+				</a>
+
+				<p class="info__text">
+					Welcome to consaik, a leader in the industry/sector since With a
+					passion for excellence and a commitment.
+				</p>
+				<p class="info__date-title">We are available</p>
+				<p class="info__date">Mon - Sat : 10:00Am To 07:30Pm</p>
+			</div>
+
+			<ul class="links-list">
+				<li class="link-item link-item--title">Quick links</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>About Us</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Our Services</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Our Pricing</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Our Team</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Contact Us</a
+					>
+				</li>
+			</ul>
+
+			<ul class="links-list">
+				<li class="link-item link-item--title">Information</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Regulatory Compliance</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>A sustainable Future</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Architectural Design</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Structural Engineering</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Environmental Impact</a
+					>
+				</li>
+			</ul>
+
+			<ul class="links-list">
+				<li class="link-item link-item--title">Social Media</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Facebook</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Instagram</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>Twitter</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>YouTube</a
+					>
+				</li>
+				<li class="link-item">
+					<a
+						class="link"
+						href="#"
+						>LinkedIn</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer__copy-wrapper">
+		<p class="footer__copy">
+			© 1995-2024 All rights for <span>Conbuild</span> exclusive
+		</p>
+	</div>
+</div>
+
+<style>
+	.footer__inner {
+		width: 100%;
+		max-width: 1920px;
+		grid-column: 1 / 4;
+	}
+
+	/* MAP */
+	.footer-map {
+		width: 100%;
+		height: 568px;
+	}
+
+	/* FORM */
+	.form {
+		width: 100%;
+		max-width: 1296px;
+		margin: -93px auto;
+		background-color: var(--color-brand-primary);
+		padding: 51px 110px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-image: url("img/mail-bg.png");
+		background-repeat: no-repeat;
+		background-position: 35% center;
+		position: relative;
+		z-index: 5;
+	}
+
+	.form__title {
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 42px;
+		color: #fff;
+	}
+
+	.form__input-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 416px;
+		border-bottom: 1px solid #fff;
+		padding-bottom: 14px;
+	}
+
+	.form__input {
+		font-size: 14px;
+		line-height: 24px;
+		color: #fff;
+		background-color: transparent;
+		flex: 1;
+		outline: transparent;
+	}
+
+	.forn__input:focus {
+	}
+
+	.form__input::placeholder {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	.form__submit-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 38px;
+		height: 32px;
+		background-color: #fff;
+		transition: all 0.2s linear 0s;
+	}
+
+	.form__submit-btn:hover {
+		transform: scale(1.2);
+	}
+
+	/* LINKS */
+	.footer-info {
+		font-family: var(--font-barlow);
+		font-size: 16px;
+		line-height: 26px;
+		color: #b7b7b7;
+
+		background-color: var(--color-text-primary);
+		background-image: url("img/bg.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: bottom center;
+		padding: 232px 0 140px 0;
+	}
+
+	.info-wrapper {
+		width: 100%;
+		max-width: 1296px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.info {
+		max-width: 408px;
+	}
+
+	.info__logo {
+		display: inline-block;
+		margin-bottom: 12px;
+	}
+
+	.info__logo-img {
+		width: 221px;
+		height: 75px;
+	}
+
+	.info__logo-img:hover {
+	}
+
+	.info__text {
+		margin-bottom: 36px;
+	}
+
+	.info__date-title {
+		font-family: var(--font-jost);
+		font-weight: 600;
+		color: #fff;
+		margin-bottom: 6px;
+	}
+
+	.info__date {
+		color: var(--color-brand-primary);
+	}
+
+	.link-item + .link-item {
+		margin-top: 16px;
+	}
+
+	.link-item--title {
+		font-family: var(--font-jost);
+		font-weight: 600;
+		color: #fff;
+		margin-bottom: 24px;
+	}
+
+	.link {
+		display: inline-block;
+		transition: all 0.2s linear 0s;
+	}
+
+	.link:hover {
+		transform: scale(1.1);
+		color: var(--color-brand-primary);
+	}
+
+	/* COPY */
+
+	.footer__copy-wrapper {
+		background-color: #000;
+		text-align: center;
+		padding: 23px 0;
+	}
+
+	.footer__copy {
+		font-family: "DM Sans", var(--font-sans-serif, sans-serif);
+		font-size: 16px;
+		line-height: 26px;
+		color: #b7b7b7;
+	}
+
+	.footer__copy span {
+		color: #fff;
+	}
+</style>
