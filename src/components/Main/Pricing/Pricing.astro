@@ -1,1 +1,246 @@
-pricing
+---
+import MainSegment from "@components/shared/MainSegment.astro";
+import Link from "@components/shared/Link.astro";
+import SectionTitle from "@components/shared/SectionTitle.astro";
+---
+
+<MainSegment>
+	<section class="pricing">
+		<div class="pricing__inner">
+			<div class="pricing__title-wrapper">
+				<SectionTitle>Our Price table</SectionTitle>
+			</div>
+			<h3 class="pricing__subtitle">Solutions For Price table</h3>
+
+			<ul class="pricing__list">
+				<li
+					class="pricing__card"
+					data-link-group
+				>
+					<p class="pricing__price">$19.99 <span>/M</span></p>
+					<span class="pricing__rate">Basic</span>
+
+					<ul class="pricing__options">
+						<li class="pricing__option">24/7 Free Hotline</li>
+						<li class="pricing__option">Chat Support</li>
+						<li class="pricing__option">5 Months After Delivery Support</li>
+						<li class="pricing__option">Support with 8 Engineers</li>
+						<li class="pricing__option pricing__option--inactive">
+							Team Management
+						</li>
+						<li class="pricing__option pricing__option--inactive">
+							Free Digital Marketing & Analysis
+						</li>
+					</ul>
+
+					<Link
+						theme="neutral"
+						href="#"
+					>
+						Start Free Trial
+					</Link>
+				</li>
+
+				<li
+					class="pricing__card pricing__card--accent"
+					data-link-group
+				>
+					<p class="pricing__price">$29.99 <span>/M</span></p>
+					<span class="pricing__rate">Standard</span>
+
+					<ul class="pricing__options">
+						<li class="pricing__option">24/7 Free Hotline</li>
+						<li class="pricing__option">Chat Support</li>
+						<li class="pricing__option">5 Months After Delivery Support</li>
+						<li class="pricing__option">Support with 8 Engineers</li>
+						<li class="pricing__option">Team Management</li>
+						<li class="pricing__option pricing__option--inactive">
+							Free Digital Marketing & Analysis
+						</li>
+					</ul>
+
+					<Link
+						theme="neutral"
+						href="#"
+					>
+						Start Free Trial
+					</Link>
+				</li>
+
+				<li
+					class="pricing__card"
+					data-link-group
+				>
+					<p class="pricing__price">$39.99 <span>/M</span></p>
+					<span class="pricing__rate">Premium</span>
+
+					<ul class="pricing__options">
+						<li class="pricing__option">24/7 Free Hotline</li>
+						<li class="pricing__option">Chat Support</li>
+						<li class="pricing__option">5 Months After Delivery Support</li>
+						<li class="pricing__option">Support with 8 Engineers</li>
+						<li class="pricing__option">Team Management</li>
+						<li class="pricing__option">Free Digital Marketing & Analysis</li>
+					</ul>
+
+					<Link
+						theme="neutral"
+						href="#"
+					>
+						Start Free Trial
+					</Link>
+				</li>
+			</ul>
+		</div>
+	</section>
+</MainSegment>
+
+<style>
+	.pricing__title-wrapper {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 14px;
+	}
+
+	.pricing {
+		grid-column: 1 / 4;
+		background-color: #f8f8f8;
+
+		background-image: url("img/bg.png");
+		background-repeat: no-repeat;
+		background-position: top left;
+	}
+
+	.pricing__inner {
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+		padding-top: 143px;
+
+		font-family: var(--font-jost);
+		font-weight: 400;
+		color: var(--color-text-primary);
+		text-align: center;
+	}
+
+	.pricing__title {
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 26px;
+		color: var(--color-text-primary);
+		position: relative;
+		margin-bottom: 14px;
+	}
+
+	.pricing__title::before {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 15px;
+		height: 1px;
+		background-color: var(--color-brand-primary);
+		left: -25px;
+		top: 50%;
+	}
+
+	.pricing__subtitle {
+		font-size: 52px;
+		line-height: 62px;
+		margin-bottom: 67px;
+	}
+
+	.pricing__list {
+		display: flex;
+		justify-content: space-between;
+		gap: 24px;
+	}
+
+	.pricing__card {
+		flex-grow: 1;
+		background-color: #fff;
+		border: 1px solid #d8d8d8;
+		padding: 44px 50px 50px 50px;
+		text-align: left;
+
+		position: relative;
+	}
+
+	.pricing__card::before {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 50px;
+		height: 50px;
+		background-color: var(--color-text-primary);
+		top: 0;
+		left: 0;
+		clip-path: polygon(0 0, 100% 0, 0 100%, 0 0);
+		transition: all 0.2s linear 0s;
+	}
+
+	.pricing__card:hover:before {
+		background-color: var(--color-brand-primary);
+	}
+
+	.pricing__card--accent::after {
+		position: absolute;
+		content: "Special";
+		display: block;
+		top: 10px;
+		right: 10px;
+
+		font-family: var(--font-barlow);
+		font-size: 16px;
+		line-height: 26px;
+		color: #fff;
+		background-color: #39ca6e;
+		padding: 2px 24px;
+		border-radius: 100px;
+	}
+
+	.pricing__price {
+		font-size: 32px;
+		line-height: 32px;
+		font-weight: 600;
+		margin-bottom: 13px;
+	}
+
+	.pricing__price span {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 26px;
+		color: var(--color-text-neutral-dark);
+	}
+
+	.pricing__rate {
+		font-family: var(--font-barlow);
+		font-size: 16px;
+		line-height: 26px;
+		font-weight: 400;
+		display: block;
+		padding-left: 40px;
+		background-image: url("img/rate_star.svg");
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 24px 24px;
+		padding-bottom: 27px;
+		border-bottom: 1px solid #d8d8d8;
+	}
+
+	.pricing__options {
+		margin-top: 18px;
+		list-style-type: disc;
+		margin-bottom: 38px;
+	}
+
+	.pricing__option {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 36px;
+	}
+
+	.pricing__option--inactive {
+		color: var(--color-text-neutral-dark);
+	}
+</style>
