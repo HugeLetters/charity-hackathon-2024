@@ -1,6 +1,6 @@
 ---
 interface Props {
-	theme: "neural" | "primary";
+	theme: "neutral" | "primary";
 	href: string;
 }
 
@@ -12,17 +12,59 @@ const { href, theme } = Astro.props;
 	data-theme={theme}
 >
 	<slot />
-	->
+	<svg
+		width="1rem"
+		viewBox="0 0 17 18"
+		class="arrow"
+	>
+		<path
+			d="M.247 16.341a1 1 0 001.506 1.317L.247 16.341zM15.997.934a1 1 0 00-1.063-.93L5.954.6a1 1 0 10.132 1.995l7.983-.532.532 7.983a1 1 0 001.995-.133l-.598-8.98zM1.754 17.66l14-16L14.247.34l-14 16 1.506 1.317z"
+			fill="currentColor"
+		>
+		</path>
+	</svg>
 </a>
 
 <style>
+	a {
+		display: flex;
+		gap: 0.5rem;
+		font-weight: 600;
+		font-family: var(--font-jost);
+		padding: 1rem 2rem;
+		width: fit-content;
+		overflow: hidden;
+
+		transition-duration: 200ms;
+		transition-property: background, color, outline;
+	}
+
 	a[data-theme="neutral"] {
 		background: white;
-		color: black;
+		color: var(--color-text-primary);
+		outline: 1px solid currentColor;
 	}
 
 	a[data-theme="primary"] {
 		background: var(--color-brand-primary);
 		color: white;
+	}
+
+	a[data-theme="neutral"]:is(:hover, :focus-visible) {
+		background: var(--color-brand-primary);
+		color: white;
+		outline-color: var(--color-brand-primary);
+	}
+
+	.arrow {
+		transition-property: translate, scale;
+		transition-duration: 300ms, 300ms;
+		transition-delay: 0ms, 300ms;
+	}
+
+	a:is(:hover, :focus-visible) .arrow {
+		transition-delay: 300ms, 0ms;
+		translate: 3rem -3rem;
+		scale: 2;
 	}
 </style>
