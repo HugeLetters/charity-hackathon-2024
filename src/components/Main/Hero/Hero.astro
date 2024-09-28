@@ -2,6 +2,8 @@
 import Link from "@components/shared/Link.astro";
 import { Image } from "astro:assets";
 import EngineerPng from "./img/cheerful-engineer.png";
+import CranePng from "./img/crane.png";
+import TruckPng from "./img/hero-truck.png";
 ---
 
 <div>
@@ -34,9 +36,19 @@ import EngineerPng from "./img/cheerful-engineer.png";
 			<div class="rect-gradient"></div>
 			<div class="rect-gradient-2"></div>
 		</div>
-		<div class="crane"></div>
-		<div class="truck"></div>
 	</section>
+	<div class="floating-graphic">
+		<Image
+			src={CranePng}
+			alt=""
+			class="crane"
+		/>
+		<Image
+			src={TruckPng}
+			alt=""
+			class="truck"
+		/>
+	</div>
 </div>
 
 <style>
@@ -147,21 +159,20 @@ import EngineerPng from "./img/cheerful-engineer.png";
 		);
 	}
 
+	.floating-graphic {
+		display: grid;
+	}
+
 	.truck {
+		grid-area: 1 / -1;
+		justify-self: center;
 		width: 538px;
-		height: 346px;
-		background-image: url("img/hero-truck.png");
-		background-repeat: no-repeat;
-		background-size: cover;
-		transform: translate(660px, -555px);
+		transform: translateY(-50%);
 	}
 
 	.crane {
-		width: 78px;
-		height: 237px;
-		background-image: url("img/crane.png");
-		background-repeat: no-repeat;
-		background-size: cover;
-		transform: translate(45px, -115px);
+		padding-left: 3rem;
+		grid-area: 1 / -1;
+		width: 8rem;
 	}
 </style>
