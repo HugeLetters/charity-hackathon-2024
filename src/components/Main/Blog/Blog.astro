@@ -11,8 +11,8 @@ import Art4 from "./img/art_4.jpg";
 ---
 
 <!-- Не сделано:
-1. Открытие постов в отдельных модалках
-2. Подгрузка постов при нажатии на кнопку -->
+1. todo - Открытие постов в отдельных модалках
+2. todo - Подгрузка постов при нажатии на кнопку -->
 <MainSegment>
 	<div class="schematic">
 		<Schematic />
@@ -47,7 +47,9 @@ import Art4 from "./img/art_4.jpg";
 						regulatory changes, and market trends. We cover a wide range of
 						topics, from new technological.
 					</p>
-					<button class="article__modal-btn"
+					<button
+						class="article__modal-btn"
+						type="button"
 						>Read More <svg
 							width="26"
 							height="8"
@@ -80,6 +82,7 @@ import Art4 from "./img/art_4.jpg";
 				</div>
 			</article>
 		</div>
+		<!-- todo - обернуть карточки в ссылки (а нужно ли?) -->
 		<div class="blog-bottom">
 			<article class="article">
 				<div class="article__img-wrapper">
@@ -113,7 +116,9 @@ import Art4 from "./img/art_4.jpg";
 				<h4 class="article__title">
 					Practical advice and building step-by-step.
 				</h4>
-				<button class="article__modal-btn"
+				<button
+					class="article__modal-btn"
+					type="button"
 					>Read More <svg
 						width="26"
 						height="8"
@@ -161,7 +166,9 @@ import Art4 from "./img/art_4.jpg";
 				<h4 class="article__title">
 					Insights perspective industry from our team.
 				</h4>
-				<button class="article__modal-btn"
+				<button
+					class="article__modal-btn"
+					type="button"
 					>Read More <svg
 						width="26"
 						height="8"
@@ -209,7 +216,9 @@ import Art4 from "./img/art_4.jpg";
 				<h4 class="article__title">
 					Most Successful Projects Best Building Case Studies.
 				</h4>
-				<button class="article__modal-btn"
+				<button
+					class="article__modal-btn"
+					type="button"
 					>Read More <svg
 						width="26"
 						height="8"
@@ -329,15 +338,18 @@ import Art4 from "./img/art_4.jpg";
 		right: 10px;
 		bottom: 24px;
 		opacity: 0;
+		transition: all 0.2s linear 0s;
 	}
 
-	.main-article__img {
+	.main-article__img,
+	.article__img {
 		width: 636px;
 		height: 361px;
+		object-fit: cover;
 	}
 
 	.article {
-		flex-grow: 1;
+		flex: 1;
 		padding: 30px 30px 23px 30px;
 		outline: 1px solid #d8d8d8;
 		text-align: left;
@@ -347,7 +359,6 @@ import Art4 from "./img/art_4.jpg";
 	.article:hover .article__date {
 		outline: none;
 		opacity: 1;
-		transition: all 0.2s linear 0s;
 	}
 
 	.article:hover .article__modal-btn,
@@ -356,7 +367,6 @@ import Art4 from "./img/art_4.jpg";
 	.main-article:hover .article__modal-btn svg {
 		color: var(--color-brand-primary);
 		fill: var(--color-brand-primary);
-		transition: all 0.2s linear 0s;
 		transform: scale(1.05);
 	}
 
@@ -366,7 +376,7 @@ import Art4 from "./img/art_4.jpg";
 	}
 
 	.article__img {
-		width: 356px;
+		width: 100%;
 		max-width: 356px;
 		height: 300px;
 	}
@@ -382,6 +392,7 @@ import Art4 from "./img/art_4.jpg";
 		line-height: 26px;
 		color: var(--color-text-neutral-dark);
 		position: relative;
+		transition: all 0.2s linear 0s;
 	}
 
 	.article__category--main {
@@ -420,7 +431,6 @@ import Art4 from "./img/art_4.jpg";
 	.article__category--main:hover,
 	.article__category--secondary:hover {
 		color: var(--color-brand-primary);
-		transition: all 0.2s linear 0s;
 	}
 
 	.article__category--main:hover:before,
@@ -442,6 +452,7 @@ import Art4 from "./img/art_4.jpg";
 		display: flex;
 		align-items: center;
 		gap: 10px;
+		transition: all 0.2s linear 0s;
 	}
 
 	.btn-wrapper {
