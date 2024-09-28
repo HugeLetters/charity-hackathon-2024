@@ -1,22 +1,65 @@
 ---
 import Schematic from "@components/shared/Schematic.astro";
 import MainSegment from "@components/shared/MainSegment.astro";
+import SectionTitle from "@components/shared/SectionTitle.astro";
+import Link from "@components/shared/Link.astro";
+import TextWithReflection from "./TextWithReflection.astro";
 ---
 
 <MainSegment>
-	<div class="content">about us</div>
-	<div class="schematic">
+	<div class="content">
+		<div>
+			<div>
+				<SectionTitle>About Us</SectionTitle>
+				<h3 class="title">What about our industry Performance.</h3>
+			</div>
+			<div>
+				<div class="caption">
+					In today's world, we're bombarded with choices. From streaming
+					services to meal kits, it can be overwhelming.
+				</div>
+				<div>
+					<Link
+						theme="primary"
+						href="todo"
+					>
+						Read More
+					</Link>
+					<div class="experience">
+						<TextWithReflection text="25+ Experience" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<card>1</card>
+			<card>2</card>
+			<card>3</card>
+		</div>
+	</div>
+	<div>
 		<Schematic />
 	</div>
 </MainSegment>
 
 <style>
 	.content {
-		background-color: red;
+		font-family: var(--font-jost);
 		grid-column-start: 2;
 	}
 
-	.schematic {
-		background-color: blue;
+	.title {
+		font-weight: 600;
+		font-size: 3.5rem;
+	}
+
+	.caption {
+		color: var(--color-text-neutral-dark);
+		font-family: var(--font-barlow);
+	}
+
+	.experience {
+		font-size: 2rem;
+		font-weight: 600;
 	}
 </style>
