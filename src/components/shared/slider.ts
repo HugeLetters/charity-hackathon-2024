@@ -4,6 +4,8 @@ type SliderOptions = {
 	nextButton?: HTMLElement;
 };
 
+const TOLERANCE = 10;
+
 export function createHorizontalSlider({
 	slider,
 	prevButton,
@@ -18,7 +20,7 @@ export function createHorizontalSlider({
 
 	const offset = firstChild.clientWidth;
 	prevButton?.addEventListener("click", () => {
-		if (slider.scrollLeft <= 10) {
+		if (slider.scrollLeft <= TOLERANCE) {
 			slider.scroll({ left: slider.scrollWidth, behavior: "smooth" });
 			return;
 		}
@@ -26,7 +28,10 @@ export function createHorizontalSlider({
 	});
 
 	nextButton?.addEventListener("click", () => {
-		if (slider.scrollWidth <= slider.scrollLeft + slider.clientWidth) {
+		if (
+			slider.scrollWidth <=
+			slider.scrollLeft + slider.clientWidth + TOLERANCE
+		) {
 			slider.scroll({ left: 0, behavior: "smooth" });
 			return;
 		}
