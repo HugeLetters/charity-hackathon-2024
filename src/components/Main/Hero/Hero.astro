@@ -1,6 +1,7 @@
 ---
 import Link from "@components/shared/Link.astro";
 import MainSegment from "@components/shared/MainSegment.astro";
+import { Image } from "astro:assets";
 import EngineerPng from "./img/cheerful-engineer.png";
 ---
 
@@ -22,8 +23,8 @@ import EngineerPng from "./img/cheerful-engineer.png";
 			</div>
 			<div class="hero__image">
 				<div class="image">
-					<img
-						src={EngineerPng.src}
+					<Image
+						src={EngineerPng}
 						alt=""
 					/>
 				</div>
