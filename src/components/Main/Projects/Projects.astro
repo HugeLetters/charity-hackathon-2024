@@ -4,8 +4,21 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 import Arrow from "@components/shared/Arrow.astro";
 ---
 
+<script>
+	import { createHorizontalSlider } from "@components/shared/slider";
+
+	const root = document.getElementById('projects');
+	const navigation = root?.querySelector('.navigation');
+
+	const prevButton = navigation?.querySelector<HTMLButtonElement>('button[data-dir=left]')!;
+	const nextButton = navigation?.querySelector<HTMLButtonElement>('button[data-dir=right]')!;
+
+	const slider = root?.querySelector<HTMLElement>('.carousel')!;
+	createHorizontalSlider({slider, nextButton, prevButton});
+</script>
+
 <MainSegment>
-	<section class="projects">
+	<section class="projects" id="projects">
 		<div class="projects__start">
 			<div class="title">
 				<SectionTitle>Our Projects</SectionTitle>
@@ -29,7 +42,7 @@ import Arrow from "@components/shared/Arrow.astro";
 			</div>
 		</div>
 		<div class="projects__carousel carousel">
-			<!-- Todo: скачать 4 (разные) картинки -->
+			<!-- Todo: текст для картинок -->
 			<div class="slide slide-1">
 				<div class="slide__content">
 					<button class="btn-primary">
@@ -233,26 +246,33 @@ import Arrow from "@components/shared/Arrow.astro";
 		scroll-snap-align: start;
 		width: 39rem;
 		text-align: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
 	.slide:hover .slide__content {
 		opacity: 1;
 	}
 
-	.slide-1,
-	.slide-3,
-	.slide-5 {
+	.slide-1 {
 		background-image: url("img/slide-1.jpg");
-		background-repeat: no-repeat;
-		background-size: contain;
 	}
 
-	.slide-2,
-	.slide-4,
-	.slide-6 {
+	.slide-2 {
 		background-image: url("img/slide-2.jpg");
-		background-repeat: no-repeat;
-		background-size: contain;
+	}
+	.slide-3 {
+		background-image: url("img/slide-3.jpg");
+	}
+
+	.slide-4 {
+		background-image: url("img/slide-4.jpg");
+	}
+	.slide-5 {
+		background-image: url("img/slide-5.jpg");
+	}
+	.slide-6 {
+		background-image: url("img/slide-6.jpg");
 	}
 
 	.slide__content {
