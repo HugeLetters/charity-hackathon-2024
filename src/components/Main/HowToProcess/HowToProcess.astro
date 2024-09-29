@@ -9,7 +9,7 @@ import vid3 from "./img/vid1.jpg";
 ---
 
 <script>
-	const tabs = document.querySelector("#process-tabs");
+	const tabs = document.getElementById("process-tabs-content");
 	const tabsBtns = document.querySelectorAll(".tabs__btn");
 	const videoPlaceholder = document.querySelector(".media__vid-content");
 
@@ -31,7 +31,7 @@ import vid3 from "./img/vid1.jpg";
 </script>
 
 <MainSegment>
-	<section class="process">
+	<div class="process">
 		<div class="process__title-wrapper">
 			<SectionTitle>How To Process</SectionTitle>
 		</div>
@@ -40,7 +40,7 @@ import vid3 from "./img/vid1.jpg";
 		<!-- Активный элемент (таб) - tabs__btn--active -->
 		<div
 			class="tabs"
-			id="process-tabs"
+			id="process-tabs-content"
 		>
 			<button
 				class="tabs__btn"
@@ -93,7 +93,7 @@ import vid3 from "./img/vid1.jpg";
 				>
 			</div>
 		</div>
-	</section>
+	</div>
 	<!-- <div class="media__vid">
 				<video
 					src="https://rutube.ru/video/049260ce5703e2d9dcadb6c48c596477/"

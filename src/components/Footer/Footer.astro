@@ -19,26 +19,25 @@ import logo from "./img/logo.svg";
 		action="#"
 		method="post"
 	>
-		<label
-			class="form__title"
-			for="Email"
-		>
-			Sign Up For Our Newsletter<br />
+		<div class="form__title">
+			Sign Up For Our Newsletter
+			<br />
 			To Get Weekly Updates.
-		</label>
+		</div>
 
 		<div class="form__input-wrapper">
 			<input
 				class="form__input"
 				type="text"
-				id="Email"
 				placeholder="Inter Your Email"
 			/>
 
 			<button
 				class="form__submit-btn"
 				type="submit"
-				><svg
+			>
+				<svg
+					class="form__submit-btn-icon"
 					width="12"
 					height="12"
 					viewBox="0 0 12 12"
@@ -50,8 +49,8 @@ import logo from "./img/logo.svg";
 						fill="#FB5B11"
 					></path>
 				</svg>
-				<span class="visually-hidden">Send email</span></button
-			>
+				<span class="visually-hidden">Send email</span>
+			</button>
 		</div>
 	</form>
 
@@ -85,36 +84,41 @@ import logo from "./img/logo.svg";
 					<a
 						class="link"
 						href="#"
-						>About Us</a
 					>
+						About Us
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Our Services</a
 					>
+						Our Services
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Our Pricing</a
 					>
+						Our Pricing
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Our Team</a
 					>
+						Our Team
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Contact Us</a
 					>
+						Contact Us
+					</a>
 				</li>
 			</ul>
 
@@ -124,36 +128,41 @@ import logo from "./img/logo.svg";
 					<a
 						class="link"
 						href="#"
-						>Regulatory Compliance</a
 					>
+						Regulatory Compliance
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>A sustainable Future</a
 					>
+						A sustainable Future
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Architectural Design</a
 					>
+						Architectural Design
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Structural Engineering</a
 					>
+						Structural Engineering
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Environmental Impact</a
 					>
+						Environmental Impact
+					</a>
 				</li>
 			</ul>
 
@@ -163,36 +172,41 @@ import logo from "./img/logo.svg";
 					<a
 						class="link"
 						href="#"
-						>Facebook</a
 					>
+						Facebook
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Instagram</a
 					>
+						Instagram
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>Twitter</a
 					>
+						Twitter
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>YouTube</a
 					>
+						YouTube
+					</a>
 				</li>
 				<li class="link-item">
 					<a
 						class="link"
 						href="#"
-						>LinkedIn</a
 					>
+						LinkedIn
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -280,11 +294,18 @@ import logo from "./img/logo.svg";
 		width: 38px;
 		height: 32px;
 		background-color: #fff;
-		transition: all 0.2s linear 0s;
+		transition: scale 200ms;
 	}
 
 	.form__submit-btn:hover {
-		transform: scale(1.2);
+		scale: 1.2;
+	}
+
+	.form__submit-btn-icon {
+		transition: scale 200ms;
+	}
+	.form__submit-btn:hover .form__submit-btn-icon {
+		scale: 1.6;
 	}
 
 	/* LINKS */
