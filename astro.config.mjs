@@ -22,5 +22,11 @@ export default defineConfig({
 			cssMinify: "lightningcss",
 		},
 	},
-	integrations: [purgecss()],
+	integrations: [
+		purgecss({
+			safelist: {
+				standard: [/:.?is/],
+			},
+		}),
+	],
 });
