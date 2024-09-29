@@ -6,11 +6,9 @@ import logo from "./img/logo.svg";
 <div class="footer__inner">
 	<iframe
 		class="footer-map"
-		class="footer-map__frame"
 		src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14599.694508120036!2d90.39411249150722!3d23.821314692036534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1727542174807!5m2!1sru!2sru"
-		width="600"
-		height="450"
-		style="border:0;"
+		frameborder="0"
+		style="border:0"
 		allowfullscreen=""
 		loading="lazy"
 		referrerpolicy="no-referrer-when-downgrade"
@@ -217,6 +215,12 @@ import logo from "./img/logo.svg";
 	.footer-map {
 		width: 100%;
 		height: 568px;
+		transition: filter 500ms;
+		filter: grayscale(0) contrast(1.1);
+	}
+
+	.footer-map:not(:is(:hover, :focus-within)) {
+		filter: grayscale(1) contrast(1);
 	}
 
 	/* FORM */
