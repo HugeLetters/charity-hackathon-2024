@@ -2,14 +2,22 @@
 import SectionTitle from "@components/shared/SectionTitle.astro";
 import MainSegment from "@components/shared/MainSegment.astro";
 import Link from "@components/shared/Link.astro";
+import { Image } from "astro:assets";
+import EngineerIcon from "./img/engineer-icon.svg";
 ---
 
 <MainSegment>
+<<<<<<< HEAD
 	<div class="services__wrap">
 		<div class="services__intro">
 			<SectionTitle>
 				<h2 class="services__title">Latest Services</h2>
 			</SectionTitle>
+=======
+	<div class='services__wrap'>
+		<div class='services__intro'>
+			<SectionTitle> Latest Services </SectionTitle>
+>>>>>>> d8e179f037b164e38bf2848ff86a765eb5162a2e
 			<!-- todo: выровнять черту по центру, добавить изображение в фон -->
 
 			<h3 class="services__headline">The Best Services For You.</h3>
@@ -23,49 +31,104 @@ import Link from "@components/shared/Link.astro";
 			>
 				See All
 			</Link>
+			<div>
+				<Image
+					src={EngineerIcon}
+					alt='Engineer icon'
+					class='services__icon'
+				/>
+			</div>
 		</div>
+<<<<<<< HEAD
 		<!--todo: сгенерировать текст -->
 		<div class="services__slider">
 			<ul class="slider__slides">
 				<li class="slider__slide slider__slide-first">
 					<div class="slide__content">
 						<a href="todo"><h4 class="slide__title">Building Contraction</h4></a
+=======
+		<!--todo: сгенерировать текст, сделать слайдер -->
+		<div class='services__slider'>
+			<ul class='slider__slides'>
+				<li class='slider__slide slider__slide-first'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h4 class='slide__title'>
+								Building Construction
+							</h4></a
+>>>>>>> d8e179f037b164e38bf2848ff86a765eb5162a2e
 						>
 						<p class="slide__text">
 							This involves various stages like planning, design,
 						</p>
 					</div>
 				</li>
+<<<<<<< HEAD
 				<li class="slider__slide slider__slide-second">
 					<div class="slide__content">
 						<a href="todo"><h4 class="slide__title">Building Contraction</h4></a
+=======
+				<li class='slider__slide slider__slide-second'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h4 class='slide__title'>
+								Building Construction
+							</h4></a
+>>>>>>> d8e179f037b164e38bf2848ff86a765eb5162a2e
 						>
 						<p class="slide__text">
 							This involves various stages like planning, design,
 						</p>
 					</div>
 				</li>
+<<<<<<< HEAD
 				<li class="slider__slide slider__slide-third">
 					<div class="slide__content">
 						<a href="todo"><h4 class="slide__title">Building Contraction</h4></a
+=======
+				<li class='slider__slide slider__slide-third'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h4 class='slide__title'>
+								Building Construction
+							</h4></a
+>>>>>>> d8e179f037b164e38bf2848ff86a765eb5162a2e
 						>
 						<p class="slide__text">
 							This involves various stages like planning, design,
 						</p>
 					</div>
 				</li>
+<<<<<<< HEAD
 				<li class="slider__slide slider__slide-fourth">
 					<div class="slide__content">
 						<a href="todo"><h4 class="slide__title">Building Contraction</h4></a
+=======
+				<li class='slider__slide slider__slide-fourth'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h4 class='slide__title'>
+								Building Construction
+							</h4></a
+>>>>>>> d8e179f037b164e38bf2848ff86a765eb5162a2e
 						>
 						<p class="slide__text">
 							This involves various stages like planning, design,
 						</p>
 					</div>
 				</li>
+<<<<<<< HEAD
 				<li class="slider__slide slider__slide-fifth">
 					<div class="slide__content">
 						<a href="todo"><h4 class="slide__title">Building Contraction</h4></a
+=======
+				<li class='slider__slide slider__slide-fifth'>
+					<div class='slide__content'>
+						<a href='todo'
+							><h4 class='slide__title'>
+								Building Construction
+							</h4></a
+>>>>>>> d8e179f037b164e38bf2848ff86a765eb5162a2e
 						>
 						<p class="slide__text">
 							This involves various stages like planning, design,
@@ -83,11 +146,17 @@ import Link from "@components/shared/Link.astro";
 		wrap: nowrap;
 		background-color: white;
 		grid-column: 2/3;
-		grid-row: 3/4;
+		margin-bottom: 9rem;
 	}
 	.services__intro {
 		max-width: 28rem;
 		margin-right: 7rem;
+		position: relative;
+	}
+	.services__icon {
+		position: absolute;
+		top: 20rem;
+		left: 25rem;
 	}
 	.services__title {
 		margin-bottom: 1rem;
@@ -98,7 +167,7 @@ import Link from "@components/shared/Link.astro";
 		line-height: 4rem;
 	}
 	.sevices__caption {
-		margin-bottom: 1.6rem;
+		margin-bottom: 2.6rem;
 	}
 	.services__slider {
 		display: flex;

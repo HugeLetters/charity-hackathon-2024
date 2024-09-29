@@ -14,24 +14,44 @@ import Testimonial from "@components/Main/Testimonial/Testimonial.astro";
 import Shell from "@layouts/Shell.astro";
 ---
 
-<!-- todo - minify assets(images,videos) -->
+<!-- todo - minify assets(images,videos) --><!-- todo - segment spacing -->
 <Shell>
 	<header>
 		<Header />
 	</header>
 	<main>
-		<Hero />
-		<LatestServices />
-		<AboutUs />
-		<CompanyStatus />
-		<Projects />
-		<HowToProcess />
-		<Testimonial />
-		<Team />
-		<Pricing />
-		<Blog />
+		<section id="home-segment">
+			<Hero />
+		</section>
+		<section>
+			<LatestServices />
+		</section>
+		<section id="about-segment">
+			<AboutUs />
+		</section>
+		<section>
+			<CompanyStatus />
+		</section>
+		<section id="projects-segment">
+			<Projects />
+		</section>
+		<section>
+			<HowToProcess />
+		</section>
+		<section id="testimonial-segment">
+			<Testimonial />
+		</section>
+		<section id="team-segment">
+			<Team />
+		</section>
+		<section id="pricing-segment">
+			<Pricing />
+		</section>
+		<section id="blog-segment">
+			<Blog />
+		</section>
 	</main>
-	<footer>
+	<footer id="footer">
 		<Footer />
 	</footer>
 </Shell>

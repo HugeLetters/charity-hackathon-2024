@@ -7,18 +7,25 @@ import Arrow from "@components/shared/Arrow.astro";
 <script>
 	import { createHorizontalSlider } from "@components/shared/slider";
 
-	const root = document.getElementById('projects');
-	const navigation = root?.querySelector('.navigation');
+	const root = document.getElementById("projects-root");
+	const navigation = root?.querySelector(".navigation");
 
-	const prevButton = navigation?.querySelector<HTMLButtonElement>('button[data-dir=left]')!;
-	const nextButton = navigation?.querySelector<HTMLButtonElement>('button[data-dir=right]')!;
+	const prevButton = navigation?.querySelector<HTMLButtonElement>(
+		"button[data-dir=left]"
+	)!;
+	const nextButton = navigation?.querySelector<HTMLButtonElement>(
+		"button[data-dir=right]"
+	)!;
 
-	const slider = root?.querySelector<HTMLElement>('.carousel')!;
-	createHorizontalSlider({slider, nextButton, prevButton});
+	const slider = root?.querySelector<HTMLElement>(".carousel")!;
+	createHorizontalSlider({ slider, nextButton, prevButton });
 </script>
 
 <MainSegment>
-	<section class="projects" id="projects">
+	<div
+		class="projects"
+		id="projects-root"
+	>
 		<div class="projects__start">
 			<div class="title">
 				<SectionTitle>Our Projects</SectionTitle>
@@ -188,7 +195,7 @@ import Arrow from "@components/shared/Arrow.astro";
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 </MainSegment>
 
 <style>

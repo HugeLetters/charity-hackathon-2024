@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import logo from "@components/Footer/img/logo.svg";
 ---
 
-<!-- todo - Добавить общий паддинг для шапки, чтобы контент к краям экрана не прилипал хотя бы на пк --><!-- todo - Адаптив.. Не знаю, что тут делать с адаптивом, возможно полностью убирать левую оранжевую область, и запихивать все в бургер -->
+<!-- todo - Адаптив.. Не знаю, что тут делать с адаптивом, возможно полностью убирать левую оранжевую область, и запихивать все в бургер --><!-- todo - sticky -->
 <div class="header-wrapper">
 	<div class="header__inner">
 		<div class="logo-wrapper">
@@ -21,165 +21,189 @@ import logo from "@components/Footer/img/logo.svg";
 			</a>
 		</div>
 
-		<div class="top">
-			<adress class="adress">2464 Royal Ln. Mesa, New York</adress>
+		<div class="contacts">
+			<div class="top">
+				<div class="contact-info">
+					<div class="contact-item">
+						<svg viewBox="0 0 8 16">
+							<path
+								d="M8 4c0-2.206-1.794-4-4-4S0 1.794 0 4a4.006 4.006 0 003.333 3.944v7.39a.667.667 0 001.334 0v-7.39A4.006 4.006 0 008 4zM4 6.667A2.67 2.67 0 011.333 4 2.67 2.67 0 014 1.333 2.67 2.67 0 016.667 4 2.67 2.67 0 014 6.667z"
+								fill="#FB5B11"
+							></path>
+						</svg>
+						<address>2464 Royal Ln. Mesa, New York</address>
+					</div>
 
-			<a
-				class="mail"
-				href="mailto:info@golzergmail.com"
-			>
-				info@golzergmail.com
-			</a>
-
-			<p class="opening-hours">Mon - Sat <time>8:00 - 18:20</time></p>
-			<ul class="socials-list">
-				<!-- todo - Поправить иконку фейсбука и цвета + ховер эффекты -->
-				<!-- todo - Прижать блок с социалаками право -->
-				<li class="socials-item">
 					<a
-						class="socials-link"
-						href="#"
+						class="contact-item"
+						href="mailto:info@golzergmail.com"
 					>
-						<svg
-							fill="currentColor"
-							viewBox="0 0 24 24"
-							data-name="Flat Color"
+						<svg viewBox="0 0 12 12">
+							<path
+								d="M9.5.5h-7A2.503 2.503 0 000 3v6a2.503 2.503 0 002.5 2.5h7A2.503 2.503 0 0012 9V3A2.503 2.503 0 009.5.5zm-7 1h7a1.5 1.5 0 011.39.943l-3.829 3.83a1.503 1.503 0 01-2.122 0L1.11 2.443A1.5 1.5 0 012.5 1.5zm7 9h-7A1.5 1.5 0 011 9V3.75l3.232 3.23a2.503 2.503 0 003.536 0L11 3.75V9a1.5 1.5 0 01-1.5 1.5z"
+								fill="#FB5B11"
+							></path>
+						</svg>
+						info@golzergmail.com
+					</a>
+
+					<p class="contact-item">
+						<svg viewBox="0 0 12 12">
+							<path
+								d="M6 12c-3.308 0-6-2.691-6-6 0-3.308 2.692-6 6-6 3.309 0 6 2.692 6 6 0 3.309-2.691 6-6 6zM6 1C3.243 1 1 3.243 1 6s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm2.5 5a.5.5 0 00-.5-.5H6.5V3a.5.5 0 10-1 0v3a.5.5 0 00.5.5h2a.5.5 0 00.5-.5z"
+								fill="#FB5B11"
+							></path>
+						</svg>
+						Mon - Sat
+						<time>8:00 - 18:20</time>
+					</p>
+				</div>
+				<ul class="socials-list">
+					<li class="socials-item">
+						<a
+							class="socials-link"
+							href="#"
+							aria-label="facebook"
 						>
-							<path
-								d="M14 6h3a1 1 0 001-1V3a1 1 0 00-1-1h-3a5 5 0 00-5 5v3H7a1 1 0 00-1 1v2a1 1 0 001 1h2v7a1 1 0 001 1h2a1 1 0 001-1v-7h2.22a1 1 0 001-.76l.5-2a1 1 0 00-1-1.24H13V7a1 1 0 011-1z"
-							></path>
-						</svg>
-						<span class="visually-hidden">Facebook</span>
-					</a>
-				</li>
+							<svg
+								fill="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									d="M14 6h3a1 1 0 001-1V3a1 1 0 00-1-1h-3a5 5 0 00-5 5v3H7a1 1 0 00-1 1v2a1 1 0 001 1h2v7a1 1 0 001 1h2a1 1 0 001-1v-7h2.22a1 1 0 001-.76l.5-2a1 1 0 00-1-1.24H13V7a1 1 0 011-1z"
+								></path>
+							</svg>
+						</a>
+					</li>
 
-				<li class="socials-item">
-					<a
-						class="socials-link"
-						href="#"
-					>
-						<svg
-							viewBox="0 0 24 24"
-							fill="none"
+					<li class="socials-item">
+						<a
+							class="socials-link"
+							href="#"
+							aria-label="instagram"
 						>
-							<path
-								fill-rule="evenodd"
-								d="M12 18a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 100-8 4 4 0 000 8z"
-								fill="currentColor"
-							></path>
-							<path
-								d="M18 5a1 1 0 100 2 1 1 0 000-2z"
-								fill="currentColor"
-							></path>
-							<path
-								fill-rule="evenodd"
-								d="M1.654 4.276C1 5.56 1 7.24 1 10.6v2.8c0 3.36 0 5.04.654 6.324a6 6 0 002.622 2.622C5.56 23 7.24 23 10.6 23h2.8c3.36 0 5.04 0 6.324-.654a6 6 0 002.622-2.622C23 18.44 23 16.76 23 13.4v-2.8c0-3.36 0-5.04-.654-6.324a6 6 0 00-2.622-2.622C18.44 1 16.76 1 13.4 1h-2.8c-3.36 0-5.04 0-6.324.654a6 6 0 00-2.622 2.622zM13.4 3h-2.8c-1.713 0-2.878.002-3.778.075-.877.072-1.325.202-1.638.361a4 4 0 00-1.748 1.748c-.16.313-.29.761-.36 1.638C3.001 7.722 3 8.887 3 10.6v2.8c0 1.713.002 2.878.075 3.778.072.877.202 1.325.361 1.638a4 4 0 001.748 1.748c.313.16.761.29 1.638.36.9.074 2.065.076 3.778.076h2.8c1.713 0 2.878-.002 3.778-.075.877-.072 1.325-.202 1.638-.361a4 4 0 001.748-1.748c.16-.313.29-.761.36-1.638.074-.9.076-2.065.076-3.778v-2.8c0-1.713-.002-2.878-.075-3.778-.072-.877-.202-1.325-.361-1.638a4 4 0 00-1.748-1.748c-.313-.16-.761-.29-1.638-.36C16.278 3.001 15.113 3 13.4 3z"
-								fill="currentColor"
-							></path>
-						</svg>
-						<span class="visually-hidden">Instagram</span>
-					</a>
-				</li>
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M12 18a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 100-8 4 4 0 000 8z"
+									fill="currentColor"
+								></path>
+								<path
+									d="M18 5a1 1 0 100 2 1 1 0 000-2z"
+									fill="currentColor"
+								></path>
+								<path
+									fill-rule="evenodd"
+									d="M1.654 4.276C1 5.56 1 7.24 1 10.6v2.8c0 3.36 0 5.04.654 6.324a6 6 0 002.622 2.622C5.56 23 7.24 23 10.6 23h2.8c3.36 0 5.04 0 6.324-.654a6 6 0 002.622-2.622C23 18.44 23 16.76 23 13.4v-2.8c0-3.36 0-5.04-.654-6.324a6 6 0 00-2.622-2.622C18.44 1 16.76 1 13.4 1h-2.8c-3.36 0-5.04 0-6.324.654a6 6 0 00-2.622 2.622zM13.4 3h-2.8c-1.713 0-2.878.002-3.778.075-.877.072-1.325.202-1.638.361a4 4 0 00-1.748 1.748c-.16.313-.29.761-.36 1.638C3.001 7.722 3 8.887 3 10.6v2.8c0 1.713.002 2.878.075 3.778.072.877.202 1.325.361 1.638a4 4 0 001.748 1.748c.313.16.761.29 1.638.36.9.074 2.065.076 3.778.076h2.8c1.713 0 2.878-.002 3.778-.075.877-.072 1.325-.202 1.638-.361a4 4 0 001.748-1.748c.16-.313.29-.761.36-1.638.074-.9.076-2.065.076-3.778v-2.8c0-1.713-.002-2.878-.075-3.778-.072-.877-.202-1.325-.361-1.638a4 4 0 00-1.748-1.748c-.313-.16-.761-.29-1.638-.36C16.278 3.001 15.113 3 13.4 3z"
+									fill="currentColor"
+								></path>
+							</svg>
+						</a>
+					</li>
 
-				<li class="socials-item">
-					<a
-						class="socials-link"
-						href="#"
-					>
-						<svg viewBox="0 0 24 24">
-							<path
-								d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-								fill="currentColor"
-							></path>
-						</svg>
-						<span class="visually-hidden">X</span></a
-					>
-				</li>
+					<li class="socials-item">
+						<a
+							class="socials-link"
+							href="#"
+							aria-label="X"
+						>
+							<svg viewBox="0 0 24 24">
+								<path
+									d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+									fill="currentColor"
+								></path>
+							</svg>
+						</a>
+					</li>
 
-				<li class="socials-item">
-					<a
-						class="socials-link"
-						href="#"
-					>
-						<svg viewBox="0 0 20 20">
-							<path
-								d="M20 20h-4v-6.999c0-1.92-.847-2.991-2.366-2.991-1.653 0-2.634 1.116-2.634 2.991V20H7V7h4v1.462s1.255-2.202 4.083-2.202C17.912 6.26 20 7.986 20 11.558V20zM2.442 4.921A2.451 2.451 0 010 2.46 2.451 2.451 0 012.442 0a2.451 2.451 0 012.441 2.46 2.45 2.45 0 01-2.441 2.461zM0 20h5V7H0v13z"
-								fill="currentColor"
-							></path>
-						</svg>
-						<span class="visually-hidden">Linkedin</span>
-					</a>
-				</li>
-			</ul>
-		</div>
+					<li class="socials-item">
+						<a
+							class="socials-link"
+							href="#"
+							aria-label="linkedin"
+						>
+							<svg viewBox="0 0 20 20">
+								<path
+									d="M20 20h-4v-6.999c0-1.92-.847-2.991-2.366-2.991-1.653 0-2.634 1.116-2.634 2.991V20H7V7h4v1.462s1.255-2.202 4.083-2.202C17.912 6.26 20 7.986 20 11.558V20zM2.442 4.921A2.451 2.451 0 010 2.46 2.451 2.451 0 012.442 0a2.451 2.451 0 012.441 2.46 2.45 2.45 0 01-2.441 2.461zM0 20h5V7H0v13z"
+									fill="currentColor"
+								></path>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</div>
 
-		<div class="bottom">
-			<ul class="links-list">
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						Home
-					</a>
-				</li>
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						About
-					</a>
-				</li>
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						Projects
-					</a>
-				</li>
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						Testimonials
-					</a>
-				</li>
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						Team
-					</a>
-				</li>
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						Pricing
-					</a>
-				</li>
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						Blog
-					</a>
-				</li>
-				<li class="link-item">
-					<a
-						class="link"
-						href="#"
-					>
-						Contact
-					</a>
-				</li>
-			</ul>
+			<div class="bottom">
+				<ul class="links-list">
+					<li class="link-item">
+						<a
+							class="link"
+							href="#home-segment"
+						>
+							Home
+						</a>
+					</li>
+					<li class="link-item">
+						<a
+							class="link"
+							href="#about-segment"
+						>
+							About
+						</a>
+					</li>
+					<li class="link-item">
+						<a
+							class="link"
+							href="#projects-segment"
+						>
+							Projects
+						</a>
+					</li>
+					<li class="link-item">
+						<a
+							class="link"
+							href="#testimonial-segment"
+						>
+							Testimonials
+						</a>
+					</li>
+					<li class="link-item">
+						<a
+							class="link"
+							href="#team-segment"
+						>
+							Team
+						</a>
+					</li>
+					<li class="link-item">
+						<a
+							class="link"
+							href="#pricing-segment"
+						>
+							Pricing
+						</a>
+					</li>
+					<li class="link-item">
+						<a
+							class="link"
+							href="#blog-segment"
+						>
+							Blog
+						</a>
+					</li>
+					<li class="link-item">
+						<a
+							class="link"
+							href="#footer"
+						>
+							Contact
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="cta">
@@ -221,36 +245,37 @@ import logo from "@components/Footer/img/logo.svg";
 	}
 
 	.header__inner {
+		display: flex;
 		color: #fff;
 		font-family: var(--font-barlow);
 		font-size: 16px;
 		line-height: 26px;
-
-		width: 100%;
-		max-width: 1920px;
-		margin: 0 auto;
-
-		display: grid;
-		grid-template-areas:
-			"logo top cta"
-			"logo bottom cta";
 	}
 
 	/* LOGO */
 	.logo-wrapper {
-		grid-area: logo;
-		align-content: center;
-		padding-right: 264px;
+		flex: 0 1 36rem;
+		min-width: 14rem;
+		display: flex;
+		align-items: center;
 		position: relative;
 	}
 
+	.logo-wrapper::before {
+		content: "";
+		display: block;
+		flex-basis: 6rem;
+		flex-shrink: 1;
+	}
+
 	.logo-wrapper::after {
+		pointer-events: none;
 		position: absolute;
 		content: "";
 		display: block;
 		left: 0;
 		top: 0;
-		height: 156px;
+		height: 149.5px;
 		width: 578px;
 		background-image: url("./img/header-bg.svg");
 		background-repeat: no-repeat;
@@ -261,6 +286,8 @@ import logo from "@components/Footer/img/logo.svg";
 	.logo {
 		display: inline-block;
 		position: relative;
+		grid-column: 2;
+		flex-shrink: 0;
 		z-index: 10;
 	}
 
@@ -269,62 +296,67 @@ import logo from "@components/Footer/img/logo.svg";
 		height: 75px;
 	}
 
+	.contacts {
+		flex: 1 0 auto;
+	}
+
 	/* TOP */
 	.top {
-		grid-area: top;
+		display: flex;
+		gap: 0.5rem;
+		justify-content: space-between;
 		font-size: 14px;
 		line-height: 24px;
 		color: var(--color-text-neutral);
-		padding: 16px 0;
+		padding-block: 1rem;
+		padding-inline: 2.5rem 2rem;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	.adress {
-		padding-left: 17px;
-		background-image: url("./img/key.svg");
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: 8px 16px;
-		margin-left: 42px;
+	.contact-info {
+		display: flex;
+		flex-grow: 9999;
+		max-width: 39rem;
+		justify-content: space-between;
+		gap: 0.5rem;
+		height: 1rem;
 	}
 
-	.mail {
-		padding-left: 21px;
-		background-image: url("./img/mail.svg");
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: 12px 11px;
-		margin-left: 42px;
-	}
-
-	.opening-hours {
-		padding-left: 21px;
-		background-image: url("./img/clock.svg");
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: 12px 12px;
-		margin-left: 42px;
-
-		display: inline-block;
+	.contact-item {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
 	}
 
 	.socials-list {
-		display: inline-flex;
-		gap: 20px;
-		max-width: 96px;
-		margin-left: auto;
+		display: flex;
+		gap: 1.25rem;
 		align-items: center;
 	}
 
 	.socials-link {
+		position: relative;
+		color: var(--color-text-neutral);
 		display: block;
 		height: 0.75rem;
+		transition-property: color, scale;
+		transition-duration: 200ms;
+	}
+
+	.socials-link::before {
+		content: "";
+		position: absolute;
+		inset: -0.5rem;
+	}
+
+	.socials-link:hover {
+		color: white;
+		scale: 1.2;
 	}
 
 	/* BOTTOM */
 	.bottom {
 		grid-area: bottom;
-		padding: 30px 0 32px;
 	}
 
 	.links-list {
@@ -334,17 +366,15 @@ import logo from "@components/Footer/img/logo.svg";
 	}
 
 	.link {
+		display: block;
+		padding-block: 2rem;
 		font-weight: 700;
-		line-height: 26px;
 		position: relative;
-		transition: all 0.2s linear 0s;
+		transition: color 200ms;
+		overflow-y: hidden;
 	}
 
-	.link:hover {
-		color: var(--color-brand-primary);
-	}
-
-	.link:hover:before {
+	.link:before {
 		position: absolute;
 		content: "";
 		display: block;
@@ -352,16 +382,28 @@ import logo from "@components/Footer/img/logo.svg";
 		height: 4px;
 		background-color: var(--color-brand-primary);
 		left: 0;
-		bottom: -37px;
+		bottom: 0;
+		transition: translate 200ms;
+	}
+
+	.link:hover {
+		color: var(--color-brand-primary);
+	}
+
+	.link:hover::before {
+		transition-delay: 300ms;
+	}
+	.link:not(:hover)::before {
+		translate: 0 125%;
 	}
 
 	/* CTA */
 	.cta {
-		grid-area: cta;
+		flex: 0 3 24rem;
+		min-width: 13rem;
 		display: flex;
 		gap: 14px;
 		align-items: center;
-		padding-left: 23px;
 		border-left: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
