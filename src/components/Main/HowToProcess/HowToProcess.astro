@@ -3,9 +3,12 @@ import Schematic from "@components/shared/Schematic.astro";
 import MainSegment from "@components/shared/MainSegment.astro";
 import SectionTitle from "@components/shared/SectionTitle.astro";
 import { Image } from "astro:assets";
-import vid1 from "./assets/vid1.jpg";
-import vid2 from "./assets/vid2.jpg";
-import vid3 from "./assets/vid3.jpg";
+import vid1 from "./assets/video1.mp4";
+import vid2 from "./assets/video2.mp4";
+import vid3 from "./assets/video3.mp4";
+import vid1Preview from "./assets/vid1.jpg";
+import vid2Preview from "./assets/vid2.jpg";
+import vid3Preview from "./assets/vid3.jpg";
 ---
 
 <script>
@@ -16,6 +19,18 @@ import vid3 from "./assets/vid3.jpg";
 		"img.media__vid-content"
 	)!;
 
+	const playBtn = document.querySelector<HTMLButtonElement>(
+		"button[data-id=media__play-btn]"
+	)!;
+	const videoPlayer = document.querySelector<HTMLVideoElement>(
+		"video#process-video-player"
+	)!;
+
+	const videoModal = document.querySelector<HTMLDialogElement>(
+		"dialog#video-player-modal"
+	)!;
+	const modalCloseBtn = videoModal.querySelector("button")!;
+
 	for (const btn of tabsBtns) {
 		btn.addEventListener("click", () => {
 			tabsBtns.forEach((el) => {
@@ -23,12 +38,29 @@ import vid3 from "./assets/vid3.jpg";
 			});
 
 			btn.classList.add("tabs__btn--active");
-			videoPlaceholder.src = btn.dataset.video!;
+			videoPlaceholder.src = btn.dataset.videoPreview!;
+			videoPlayer.src = btn.dataset.video!;
 		});
 	}
+
+	playBtn.addEventListener("click", () => {
+		videoModal.showModal();
+	});
+	modalCloseBtn.addEventListener("click", () => {
+		videoModal.close();
+	});
 </script>
 
 <MainSegment>
+	<dialog id="video-player-modal">
+		<video
+			id="process-video-player"
+			class="video"
+			src={vid2}
+			controls
+		></video>
+		<button>Close</button>
+	</dialog>
 	<div class="process">
 		<div class="process__title-wrapper">
 			<SectionTitle>How To Process</SectionTitle>
@@ -41,15 +73,17 @@ import vid3 from "./assets/vid3.jpg";
 			id="process-tabs-content"
 		>
 			<button
+				data-video={vid1}
+				data-video-preview={vid1Preview.src}
 				class="tabs__btn"
-				data-video={vid1.src}
 				type="button"
 			>
 				01. Planning and Design
 			</button>
 
 			<button
-				data-video={vid2.src}
+				data-video={vid2}
+				data-video-preview={vid2Preview.src}
 				class="tabs__btn tabs__btn--active"
 				type="button"
 			>
@@ -57,7 +91,8 @@ import vid3 from "./assets/vid3.jpg";
 			</button>
 
 			<button
-				data-video={vid3.src}
+				data-video={vid3}
+				data-video-preview={vid3Preview.src}
 				class="tabs__btn"
 				type="button"
 			>
@@ -70,11 +105,12 @@ import vid3 from "./assets/vid3.jpg";
 				<Image
 					class="media__vid-content"
 					alt=""
-					src={vid2}
+					src={vid2Preview}
 				/>
 
 				<button
 					class="media__play-btn"
+					data-id="media__play-btn"
 					type="button"
 				>
 					<svg
@@ -186,5 +222,41 @@ import vid3 from "./assets/vid3.jpg";
 
 	.media__play-btn:hover {
 		transform: translate(-50%, -50%) scale(0.8);
+	}
+
+	.video {
+		height: 30rem;
+	}
+
+	#video-player-modal {
+		z-index: 4;
+		transition-property: overlay, translate, display;
+		transition-duration: 500ms;
+		transition-behavior: allow-discrete;
+		translate: 0 100vh;
+	}
+
+	#video-player-modal::backdrop {
+		transition-property: background-color;
+		transition-duration: 400ms;
+	}
+	#video-player-modal:not([open])::backdrop {
+		transition-delay: 100ms;
+	}
+
+	#video-player-modal[open] {
+		translate: 0;
+
+		@starting-style {
+			translate: 0 100vh;
+		}
+	}
+
+	#video-player-modal[open]::backdrop {
+		background-color: #000c;
+
+		@starting-style {
+			background-color: transparent;
+		}
 	}
 </style>
