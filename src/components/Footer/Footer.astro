@@ -3,6 +3,13 @@ import { Image } from "astro:assets";
 import logo from "./img/logo.svg";
 ---
 
+<script>
+	const submitBtn = document.querySelector("#email-submit-btn");
+	submitBtn?.addEventListener("click", function (e) {
+		e.preventDefault();
+	});
+</script>
+
 <div class="footer__inner">
 	<iframe
 		class="footer-map"
@@ -39,6 +46,7 @@ import logo from "./img/logo.svg";
 
 			<button
 				class="form__submit-btn"
+				id="email-submit-btn"
 				type="submit"
 				><svg
 					width="12"
