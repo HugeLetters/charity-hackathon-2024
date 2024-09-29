@@ -1,7 +1,35 @@
-<div>schematic</div>
+---
+interface Props {
+	rotation: "right" | "left";
+	position?: "top" | "bottom";
+}
+
+const { rotation, position } = Astro.props;
+---
+
+<div
+	data-rotation={rotation}
+	data-position={position}
+>
+</div>
 
 <style>
 	div {
 		overflow-x: hidden;
+		background-image: url("schema.svg");
+		background-repeat: no-repeat;
+		height: 100%;
+		max-height: 545px;
+	}
+
+	div[data-rotation="right"] {
+	}
+
+	div[data-rotation="left"] {
+		transform: scaleX(-1);
+	}
+
+	div[data-position="bottom"] {
+		margin: auto 0 100px;
 	}
 </style>
