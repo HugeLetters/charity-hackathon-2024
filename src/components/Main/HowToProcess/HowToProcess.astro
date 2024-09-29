@@ -250,8 +250,6 @@ import vid3Preview from "./assets/vid3.jpg";
 		padding: 1rem;
 		border-radius: 1rem;
 		border: 0.5rem solid var(--color-brand-primary);
-
-		display: grid;
 	}
 
 	#video-player-modal::backdrop {
@@ -263,6 +261,7 @@ import vid3Preview from "./assets/vid3.jpg";
 	}
 
 	#video-player-modal[open] {
+		display: grid;
 		translate: 0;
 
 		@starting-style {
