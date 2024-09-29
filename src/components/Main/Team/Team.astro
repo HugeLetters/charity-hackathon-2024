@@ -41,7 +41,6 @@ import FourthEngineer from "./img/engineer-4.jpg";
 				In today's world, we're bombarded with choices. From streaming services
 				to meal kits, it can be overwhelming to find the best option.
 			</div>
-			=======
 			<div
 				class="team__wrap"
 				id="team-root"
@@ -114,80 +113,82 @@ import FourthEngineer from "./img/engineer-4.jpg";
 						</li>
 					</ul>
 				</div>
-			</div><Schematic rotation="left" />
+			</div>
 		</div>
-		<style>
-			.team__wrap {
-				display: flex;
-				align-items: flex-start;
-				background-color: white;
-				grid-column: 2/3;
-			}
-			.team__intro {
-				max-width: 28rem;
-				margin-right: 4rem;
-				margin-bottom: 9rem;
-			}
-			.team__title {
-				margin-bottom: 1rem;
-			}
-			.team__headline {
-				font-size: 3rem;
-				font-weight: 600;
-				line-height: 4rem;
-				margin-bottom: 0.6rem;
-			}
-			.team__caption {
-				margin-bottom: 2.6rem;
-			}
-			.team__member-portraits {
-				max-width: 26rem;
-				height: 30rem;
-				margin-right: 4rem;
-			}
+	</div>
 
-			.slide {
-				display: none;
-			}
+	<Schematic rotation="left" />
+</MainSegment>
 
-			.slide.active {
-				display: block;
-			}
-			.team__members {
-				width: 16.8rem;
-				text-align: right;
-				padding-top: 2.7rem;
-			}
-			.members-list__member {
-				font-size: 1.5rem;
-				margin-bottom: 2rem;
-				cursor: pointer;
-			}
-			.member__name {
-				font-family: var(--font-jost);
-				font-weight: 600;
-				font-size: 1.5rem;
-				text-decoration: none;
-				color: var(--color-text-primary);
-				transition:
-					color 0.2s ease-in-out,
-					text-decoration 0.2s ease-in-out,
-					font-size 0.2s ease-in-out;
-			}
+<style>
+	.team__wrap {
+		display: flex;
+		background-color: white;
+		gap: 3rem;
+		grid-column: 2 / 2;
+	}
+	.team__intro {
+		min-width: 28rem;
+	}
+	.team__title {
+		margin-bottom: 1rem;
+	}
+	.team__headline {
+		font-size: 3rem;
+		font-weight: 600;
+		line-height: 4rem;
+		padding-bottom: 0.6rem;
+	}
+	.team__caption {
+		padding-bottom: 2.6rem;
+	}
+	.team__member-portraits {
+		max-width: 26rem;
+		height: 30rem;
+	}
 
-			.members-list__member:hover .member__name {
-				color: #ff6600;
-			}
-			.members-list__member.active .member__name {
-				font-size: 1.8rem;
-				color: #ff6600;
-				text-decoration: underline;
-			}
-			.member__position {
-				font-family: var(--font-barlow);
-				font-weight: 400;
-				color: var(--color-text-neutral);
-			}
-		</style>
-	</div></MainSegment
->
+	.slide {
+		display: none;
+	}
+
+	.slide.active {
+		display: block;
+	}
+	.team__members {
+		flex-shrink: 0;
+		flex-basis: 17rem;
+		text-align: right;
+		padding-top: 2.7rem;
+	}
+	.members-list__member {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+		cursor: pointer;
+	}
+	.member__name {
+		font-family: var(--font-jost);
+		font-weight: 600;
+		font-size: 1.5rem;
+		text-wrap: nowrap;
+		text-decoration: none;
+		color: var(--color-text-primary);
+		transition:
+			color 0.2s ease-in-out,
+			text-decoration 0.2s ease-in-out,
+			font-size 0.2s ease-in-out;
+	}
+
+	.members-list__member:hover .member__name {
+		color: #ff282a;
+	}
+	.members-list__member.active .member__name {
+		font-size: 1.8rem;
+		color: #ff282a;
+		text-decoration: underline;
+	}
+	.member__position {
+		font-family: var(--font-barlow);
+		font-weight: 400;
+		color: var(--color-text-neutral);
+	}
+</style>
