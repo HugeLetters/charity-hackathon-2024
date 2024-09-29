@@ -55,11 +55,13 @@ const { img, title, values } = Astro.props;
 		z-index: -1;
 		object-fit: cover;
 		filter: brightness(0.4);
-		transition: filter 200ms;
+		transition-property: filter, scale;
+		transition-duration: 500ms;
 	}
 
 	.root:hover .image {
 		filter: brightness(0.2);
+		scale: 1.2;
 	}
 
 	.description {
