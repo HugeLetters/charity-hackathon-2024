@@ -59,7 +59,7 @@ import vid3Preview from "./assets/vid3.jpg";
 			src={vid2}
 			controls
 		></video>
-		<button>Close</button>
+		<button class="modal-close-btn">Close</button>
 	</dialog>
 	<div class="process">
 		<div class="process__title-wrapper">
@@ -225,7 +225,7 @@ import vid3Preview from "./assets/vid3.jpg";
 	}
 
 	.video {
-		height: 30rem;
+		width: 80vw;
 	}
 
 	#video-player-modal {
@@ -234,6 +234,12 @@ import vid3Preview from "./assets/vid3.jpg";
 		transition-duration: 500ms;
 		transition-behavior: allow-discrete;
 		translate: 0 100vh;
+
+		padding: 1rem;
+		border-radius: 1rem;
+		border: 0.5rem solid var(--color-brand-primary);
+
+		display: grid;
 	}
 
 	#video-player-modal::backdrop {
@@ -258,5 +264,26 @@ import vid3Preview from "./assets/vid3.jpg";
 		@starting-style {
 			background-color: transparent;
 		}
+	}
+
+	#process-video-player,
+	.modal-close-btn {
+		grid-area: 1 / -1;
+	}
+
+	.modal-close-btn {
+		z-index: 2;
+		align-self: start;
+		justify-self: end;
+		display: block;
+		font-weight: 600;
+		font-family: var(--font-jost);
+		padding: 1.1rem 2.1rem;
+		width: fit-content;
+
+		transition-duration: 200ms;
+		transition-property: background, color, outline;
+		background: var(--color-brand-primary);
+		color: white;
 	}
 </style>
