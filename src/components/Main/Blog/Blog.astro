@@ -14,10 +14,10 @@ import Art4 from "./img/art_4.jpg";
 1. todo - Открытие постов в отдельных модалках
 2. todo - Подгрузка постов при нажатии на кнопку -->
 <MainSegment>
-	<Schematic
-		rotation="right"
-		position="bottom"
-	/>
+	<div class="schematic">
+		<Schematic rotation="right" />
+	</div>
+
 	<div class="blog">
 		<div class="blog__title-wrapper">
 			<SectionTitle>Our Blog</SectionTitle>
@@ -236,16 +236,17 @@ import Art4 from "./img/art_4.jpg";
 				</button>
 			</article>
 		</div>
-		<div class="btn-wrapper">
-			<Link
-				theme="primary"
-				href="#"
-			>
-				Read More
-			</Link>
-		</div>
 	</div>
 </MainSegment>
+
+<div class="btn-wrapper">
+	<Link
+		theme="primary"
+		href="#"
+	>
+		Read More
+	</Link>
+</div>
 
 <style>
 	.blog {
@@ -280,7 +281,6 @@ import Art4 from "./img/art_4.jpg";
 		display: flex;
 		justify-content: space-between;
 		gap: 24px;
-		margin-bottom: 42px;
 	}
 
 	.main-article {
@@ -459,6 +459,11 @@ import Art4 from "./img/art_4.jpg";
 
 	.btn-wrapper {
 		display: flex;
+		padding-top: 42px;
 		justify-content: center;
+	}
+
+	.schematic {
+		margin-top: auto;
 	}
 </style>
