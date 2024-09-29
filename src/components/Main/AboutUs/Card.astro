@@ -18,6 +18,18 @@ const { img, title, values } = Astro.props;
 	/>
 
 	<div class="description">
+		<div
+			class="title"
+			aria-hidden
+		>
+			{title}
+		</div>
+	</div>
+
+	<div
+		class="description"
+		data-hover
+	>
 		<div class="title">{title}</div>
 		<ul class="values">
 			{values.map((value) => <li>{value}</li>)}
@@ -28,8 +40,8 @@ const { img, title, values } = Astro.props;
 <style>
 	.root {
 		display: grid;
-		aspect-ratio: 416 / 332;
-		scroll-snap-align: end;
+		overflow: hidden;
+		scroll-snap-align: start;
 	}
 
 	.image,
@@ -38,22 +50,55 @@ const { img, title, values } = Astro.props;
 	}
 
 	.image {
-		z-index: -1;
-		filter: brightness(0.4);
-		object-fit: cover;
 		width: 100%;
 		height: 100%;
+		z-index: -1;
+		object-fit: cover;
+		filter: brightness(0.4);
+		transition: filter 200ms;
+	}
+
+	.root:hover .image {
+		filter: brightness(0.2);
+	}
+
+	.description {
+		padding: 1.5rem;
+		align-self: end;
+		transition: translate 200ms;
+	}
+
+	.root:hover .description:not([data-hover]) {
+		translate: 0 100%;
+	}
+
+	.root:hover .description[data-hover] {
+		transition-delay: 200ms;
+	}
+
+	.root:not(:hover) .description:not([data-hover]) {
+		transition-delay: 200ms;
+	}
+
+	.root:not(:hover) .description[data-hover] {
+		translate: -100% 100%;
 	}
 
 	.title {
 		color: white;
+		font-family: var(--font-jost);
+		font-size: 2rem;
+		font-weight: 600;
 	}
 
 	.values {
 		color: var(--color-text-neutral);
+		font-family: var(--font-barlow);
 	}
 
 	li {
-		/* todo - add plus */
+		list-style: "+";
+		padding-left: 0.25rem;
+		margin-left: 0.75rem;
 	}
 </style>

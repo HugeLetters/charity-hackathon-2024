@@ -187,7 +187,9 @@ import TextWithReflection from "./TextWithReflection.astro";
 		width: 100%;
 		min-height: 20.5rem;
 		grid-auto-flow: column;
-		gap: 1.5rem;
+		grid-template-rows: minmax(1fr, 21rem);
+		grid-auto-columns: 26rem;
+		gap: 1rem;
 		overflow-x: scroll;
 		scroll-snap-type: x mandatory;
 	}
