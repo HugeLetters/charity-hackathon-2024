@@ -4,18 +4,53 @@ import Schematic from "@components/shared/Schematic.astro";
 import SectionTitle from "@components/shared/SectionTitle.astro";
 ---
 
+<script>
+    const root = document.getElementById('testimonials');
+    const slides = root?.querySelectorAll<HTMLDivElement>('.slide')!;
+    const avatars = root?.querySelectorAll<HTMLDivElement>('.avatar');
+
+    avatars?.forEach(avatar => {
+        avatar.addEventListener('click', function() {
+            const slideIndex = this.getAttribute('data-slide');
+
+            if (slideIndex !== null) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            avatars.forEach(avatar => avatar.classList.remove('active'));
+
+            slides[parseInt(slideIndex)]?.classList.add('active');
+            this.classList.add('active');
+            }
+        })
+    })
+</script>
+
 <MainSegment>
     <Schematic/>
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="testimonials__title">
             <SectionTitle>Our Testimonials</SectionTitle>
             <h3 class="heading">What our Clients Say About our work.</h3>
         </div>
         <div class="carousel">
             <div class="carousel__wrapper">
-                <div class="carousel__slide slide-1">
+                <div class="carousel__slide slide">
                     <p class="quote">
-                        Working with consik a fantastic experience. They truly understood our vision and turned our dream home into a reality. The attention to detail and dedication were The team.
+                        From Start To Finish, Consik Was Exceptional. Their Ability To Stay On Schedule And Manage Every Detail Was Impressive. We Could Not Be Happier With Out Results.
+                    </p>
+                    <div class="author">
+                        <svg width="87" height="62" viewBox="0 0 87 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M59.8673 0H83.2585C84.9154 0 86.2585 1.34315 86.2585 3V33.6957L66.0412 62V34.3696H52.8672C51.2104 34.3696 49.8672 33.0264 49.8672 31.3696V10C49.8672 4.47715 54.3444 0 59.8673 0Z" fill="#0E0E0E"/>
+                            <path d="M9.99982 0H33.3911C35.048 0 36.3911 1.34315 36.3911 3V33.6957L16.1737 62V34.3696H2.99982C1.34296 34.3696 -0.000183105 33.0264 -0.000183105 31.3696V10C-0.000183105 4.47715 4.47698 0 9.99982 0Z" fill="#0E0E0E"/>
+                        </svg>
+                        <div class="author__info">
+                            <span class="author__name">Sarah Johnson</span>
+                            <span class="author__job">Interior Designer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel__slide slide active">
+                    <p class="quote">
+                        Working With Consik A Fantastic Experience. They Truly Understood Our Vision And Turned Our Dream Home Into A Reality. The Attention To Detail And Dedication Were The Team.
                     </p>
                     <div class="author">
                         <svg width="87" height="62" viewBox="0 0 87 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,30 +59,37 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
                         </svg>
                         <div class="author__info">
                             <span class="author__name">Brooklyn Simmons</span>
-                            <span class="author__job">Architect Designer</span>
+                            <span class="author__job">Architect Designer </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel__slide slide">
+                    <p class="quote">
+                        The Consik Team Exceeded Our Expectations. Their Professionalism Were Unmatched. They Transformed Our Office Space Into A Modern, Functional Masterpiece.
+                    </p>
+                    <div class="author">
+                        <svg width="87" height="62" viewBox="0 0 87 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M59.8673 0H83.2585C84.9154 0 86.2585 1.34315 86.2585 3V33.6957L66.0412 62V34.3696H52.8672C51.2104 34.3696 49.8672 33.0264 49.8672 31.3696V10C49.8672 4.47715 54.3444 0 59.8673 0Z" fill="#0E0E0E"/>
+                            <path d="M9.99982 0H33.3911C35.048 0 36.3911 1.34315 36.3911 3V33.6957L16.1737 62V34.3696H2.99982C1.34296 34.3696 -0.000183105 33.0264 -0.000183105 31.3696V10C-0.000183105 4.47715 4.47698 0 9.99982 0Z" fill="#0E0E0E"/>
+                        </svg>
+                        <div class="author__info">
+                            <span class="author__name">Johnathan Doe</span>
+                            <span class="author__job">Project Manager</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="decor"></div>
             <div class="avatars">
-                <div class="avatar avatar-1"></div>
-                <div class="avatar avatar-2 avatar--active"></div>
-                <div class="avatar avatar-3"></div>
+                <div class="avatar avatar-1" data-slide="0"></div>
+                <div class="avatar avatar-2 active" data-slide="1"></div>
+                <div class="avatar avatar-3" data-slide="2"></div>
             </div>
         </div>
     </section>
 </MainSegment>
 
 <style>
-    .testimonials {
-
-    }
-
-    .testimonials__title {
-
-    }
-
     .heading {
         max-width: 43rem;
         font-family: var(--font-jost);
@@ -79,8 +121,12 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
         padding-top: 3.25rem;
     }
 
-    .slide-1 {
+    .slide {
+        display: none;
+    }
 
+    .slide.active {
+        display: block;
     }
 
     .quote {
@@ -146,8 +192,10 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
         cursor: pointer;
     }
 
-    .avatar:hover,
-    .avatar--active {
+    .avatar:hover {
+        border-color: var(--color-brand-primary);
+    }
+    .avatar.active {
         border-color: var(--color-brand-primary);
         transform: scale(1.55);
     }
