@@ -1,67 +1,77 @@
 ---
-import type { JSX } from 'astro/jsx-runtime';
-
-interface Props extends JSX.HTMLAttributes {
-    quote: string;
-    name: string;
-    job: string;
+interface Props {
+	quote: string;
+	name: string;
+	job: string;
 }
 
 const { quote, name, job } = Astro.props;
 ---
 
 <div class="carousel__slide">
-    <p class="quote">
-        {quote}
-    </p>
-    <div class="author">
-        <svg width="87" height="62" viewBox="0 0 87 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M59.8673 0H83.2585C84.9154 0 86.2585 1.34315 86.2585 3V33.6957L66.0412 62V34.3696H52.8672C51.2104 34.3696 49.8672 33.0264 49.8672 31.3696V10C49.8672 4.47715 54.3444 0 59.8673 0Z" fill="#0E0E0E"/>
-            <path d="M9.99982 0H33.3911C35.048 0 36.3911 1.34315 36.3911 3V33.6957L16.1737 62V34.3696H2.99982C1.34296 34.3696 -0.000183105 33.0264 -0.000183105 31.3696V10C-0.000183105 4.47715 4.47698 0 9.99982 0Z" fill="#0E0E0E"/>
-        </svg>
-        <div class="author__info">
-            <span class="author__name">{name}</span>
-            <span class="author__job">{job}</span>
-        </div>
-    </div>
+	<p class="quote">
+		{quote}
+	</p>
+	<div class="author">
+		<svg
+			width="87"
+			height="62"
+			viewBox="0 0 87 62"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M59.8673 0H83.2585C84.9154 0 86.2585 1.34315 86.2585 3V33.6957L66.0412 62V34.3696H52.8672C51.2104 34.3696 49.8672 33.0264 49.8672 31.3696V10C49.8672 4.47715 54.3444 0 59.8673 0Z"
+				fill="#0E0E0E"
+			></path>
+			<path
+				d="M9.99982 0H33.3911C35.048 0 36.3911 1.34315 36.3911 3V33.6957L16.1737 62V34.3696H2.99982C1.34296 34.3696 -0.000183105 33.0264 -0.000183105 31.3696V10C-0.000183105 4.47715 4.47698 0 9.99982 0Z"
+				fill="#0E0E0E"
+			></path>
+		</svg>
+		<div class="author__info">
+			<span class="author__name">{name}</span>
+			<span class="author__job">{job}</span>
+		</div>
+	</div>
 </div>
 
 <style>
-    .carousel__slide {
-        padding-top: 3.25rem;
-    }
+	.carousel__slide {
+		padding-top: 3.25rem;
+	}
 
-    .quote {
-        margin-bottom: 2.5rem;
-        max-width: 60rem;
-        font-family: var(--font-jost);
-        font-weight: 400;
-        font-size: 2rem;
-        color: var(--color-text-neutral-dark); 
-    }
+	.quote {
+		margin-bottom: 2.5rem;
+		max-width: 60rem;
+		font-family: var(--font-jost);
+		font-weight: 400;
+		font-size: 2rem;
+		color: var(--color-text-neutral-dark);
+	}
 
-    .author {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
+	.author {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
 
-    .author__info {
-        display: flex;
-        flex-direction: column;
-        margin-left: 2rem;
-    }
+	.author__info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 2rem;
+	}
 
-    .author__name {
-        font-family: var(--font-jost);
-        font-weight: 600;
-        font-size: 2rem;
-    }
+	.author__name {
+		font-family: var(--font-jost);
+		font-weight: 600;
+		font-size: 2rem;
+	}
 
-    .author__job {
-        font-family: var(--font-barlow);
-        font-weight: 400;
-        font-size: 1.5rem;
-        color: var(--color-text-neutral-dark);
-    }
+	.author__job {
+		font-family: var(--font-barlow);
+		font-weight: 400;
+		font-size: 1.5rem;
+		color: var(--color-text-neutral-dark);
+	}
 </style>
