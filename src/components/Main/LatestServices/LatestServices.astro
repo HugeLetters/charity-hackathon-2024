@@ -7,93 +7,81 @@ import EngineerIcon from "./img/engineer-icon.svg";
 ---
 
 <MainSegment>
-	<div class='services__wrap'>
-		<div class='services__intro'>
+	<div class="services__wrap">
+		<div class="services__intro">
 			<SectionTitle> Latest Services </SectionTitle>
-			<h3 class='services__headline'>The Best Services For You.</h3>
-			<div class='sevices__caption'>
-				In today's world, we're bombarded with choices. From streaming
-				services to meal kits, it can be overwhelming to find the best
-				option.
+			<h3 class="services__headline">The Best Services For You.</h3>
+			<div class="sevices__caption">
+				In today's world, we're bombarded with choices. From streaming services
+				to meal kits, it can be overwhelming to find the best option.
 			</div>
 			<Link
-				theme='neutral'
-				href='todo'
+				theme="neutral"
+				href="todo"
 			>
 				See All
 			</Link>
 			<div>
 				<Image
 					src={EngineerIcon}
-					alt='Engineer icon'
-					class='services__icon'
+					alt="Engineer icon"
+					class="services__icon"
 				/>
 			</div>
 		</div>
 		<!--todo: сделать слайдер -->
-		<div class='services__slider'>
-			<ul class='slider__slides'>
-				<li class='slider__slide slider__slide-first'>
-					<div class='slide__content'>
-						<a href='todo'
-							><h4 class='slide__title'>
-								Building Construction
-							</h4></a
+		<div class="services__slider">
+			<ul class="slider__slides">
+				<li class="slider__slide slider__slide-first">
+					<div class="slide__content">
+						<a href="todo"
+							><h4 class="slide__title">Building Construction</h4></a
 						>
-						<p class='slide__text'>
-							This involves various stages like planning, design,
-							traffic studies project scheduling, land purchase
+						<p class="slide__text">
+							This involves various stages like planning, design, traffic
+							studies project scheduling, land purchase
 						</p>
 					</div>
 				</li>
-				<li class='slider__slide slider__slide-second'>
-					<div class='slide__content'>
-						<a href='todo'
-							><h4 class='slide__title'>
-								Pre-construction services
-							</h4></a
+				<li class="slider__slide slider__slide-second">
+					<div class="slide__content">
+						<a href="todo"
+							><h4 class="slide__title">Pre-construction services</h4></a
 						>
-						<p class='slide__text'>
-							This involves various stages like estimation,
-							handling of construction materials,
+						<p class="slide__text">
+							This involves various stages like estimation, handling of
+							construction materials,
 						</p>
 					</div>
 				</li>
-				<li class='slider__slide slider__slide-third'>
-					<div class='slide__content'>
-						<a href='todo'
-							><h4 class='slide__title'>Quality control</h4></a
-						>
-						<p class='slide__text'>
-							Make sure that all safety standards are respected.
-							Take care of project documentation.
+				<li class="slider__slide slider__slide-third">
+					<div class="slide__content">
+						<a href="todo"><h4 class="slide__title">Quality control</h4></a>
+						<p class="slide__text">
+							Make sure that all safety standards are respected. Take care of
+							project documentation.
 						</p>
 					</div>
 				</li>
-				<li class='slider__slide slider__slide-fourth'>
-					<div class='slide__content'>
-						<a href='todo'
-							><h4 class='slide__title'>
-								Commercial Building Construction
-							</h4></a
+				<li class="slider__slide slider__slide-fourth">
+					<div class="slide__content">
+						<a href="todo"
+							><h4 class="slide__title">Commercial Building Construction</h4></a
 						>
-						<p class='slide__text'>
-							We create functional and aesthetically pleasing
-							commercial premises that will help you develop your
-							business.
+						<p class="slide__text">
+							We create functional and aesthetically pleasing commercial
+							premises that will help you develop your business.
 						</p>
 					</div>
 				</li>
-				<li class='slider__slide slider__slide-fifth'>
-					<div class='slide__content'>
-						<a href='todo'
-							><h4 class='slide__title'>
-								Carbon emissions estimation
-							</h4></a
+				<li class="slider__slide slider__slide-fifth">
+					<div class="slide__content">
+						<a href="todo"
+							><h4 class="slide__title">Carbon emissions estimation</h4></a
 						>
-						<p class='slide__text'>
-							This involves estimation of carbon emissions and
-							ways to reduce them
+						<p class="slide__text">
+							This involves estimation of carbon emissions and ways to reduce
+							them
 						</p>
 					</div>
 				</li>
@@ -105,14 +93,14 @@ import EngineerIcon from "./img/engineer-icon.svg";
 	.services__wrap {
 		display: flex;
 		align-items: flex-start;
+		justify-content: space-between;
 		wrap: nowrap;
 		background-color: white;
-		grid-column: 2/3;
-		margin-bottom: 9rem;
+		grid-column: 2 / 3;
 	}
+
 	.services__intro {
 		max-width: 28rem;
-		margin-right: 7rem;
 		position: relative;
 	}
 	.services__icon {
