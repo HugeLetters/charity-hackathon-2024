@@ -6,6 +6,6 @@
 
 	--font-sans-serif: ui-sans-serif, sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--font-jost: Jost, var(--font-sans-serif, sans-serif);
+	--font-jost: Jost Variable, var(--font-sans-serif, sans-serif);
 	--font-barlow: Barlow, var(--font-sans-serif, sans-serif);
 }
