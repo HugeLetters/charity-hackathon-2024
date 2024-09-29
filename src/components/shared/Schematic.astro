@@ -1,15 +1,17 @@
 ---
 interface Props {
-	rotation: "right" | "left";
+	rotation?: "right" | "left";
 	position?: "top" | "bottom";
+	vertAligned?: "true";
 }
 
-const { rotation, position } = Astro.props;
+const { rotation, position, vertAligned } = Astro.props;
 ---
 
 <div
 	data-rotation={rotation}
 	data-position={position}
+	data-vert-aligned={vertAligned}
 >
 </div>
 
@@ -30,5 +32,9 @@ const { rotation, position } = Astro.props;
 
 	div[data-position="bottom"] {
 		margin: auto 0 100px;
+	}
+
+	div[data-vert-aligned="true"] {
+		margin-top: -140px;
 	}
 </style>

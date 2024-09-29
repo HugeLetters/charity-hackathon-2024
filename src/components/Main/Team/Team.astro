@@ -34,81 +34,83 @@ import FourthEngineer from "./img/engineer-4.jpg";
 
 <MainSegment>
 	<div
-		class='team__wrap'
-		id='team-root'
+		class="team__wrap"
+		id="team-root"
 	>
-		<div class='team__intro'>
+		<div class="team__intro">
 			<SectionTitle> Our Team Members </SectionTitle>
-			<h3 class='team__headline'>Our Dedicated Team Members.</h3>
-			<p class='team__caption'>
-				Our team consists of professionals who have extensive experience
-				and in-depth knowledge in the field of construction.
+			<h3 class="team__headline">Our Dedicated Team Members.</h3>
+			<p class="team__caption">
+				Our team consists of professionals who have extensive experience and
+				in-depth knowledge in the field of construction.
 			</p>
 			<Link
-				theme='neutral'
-				href='todo'
+				theme="neutral"
+				href="todo"
 			>
 				See All Members
 			</Link>
 		</div>
-		<div class='team__member-portraits'>
+		<div class="team__member-portraits">
 			<Image
 				src={FirstEngineer}
-				alt=''
-				class='slide team__member-portrait'
+				alt=""
+				class="slide team__member-portrait"
 			/>
 			<Image
 				src={SecondEngineer}
-				alt=''
-				class='slide team__member-portrait active'
+				alt=""
+				class="slide team__member-portrait active"
 			/>
 			<Image
 				src={ThirdEngineer}
-				alt=''
-				class='slide team__member-portrait'
+				alt=""
+				class="slide team__member-portrait"
 			/>
 			<Image
 				src={FourthEngineer}
-				alt=''
-				class='slide team__member-portrait'
+				alt=""
+				class="slide team__member-portrait"
 			/>
 		</div>
-		<div class='team__members'>
-			<ul class='members__list'>
+		<div class="team__members">
+			<ul class="members__list">
 				<li
-					class='members-list__member'
-					data-team-slide='0'
+					class="members-list__member"
+					data-team-slide="0"
 				>
-					<p class='member__name'>Wade Warren</p>
-					<p class='member__position'>Architect</p>
+					<p class="member__name">Wade Warren</p>
+					<p class="member__position">Architect</p>
 				</li>
 				<li
-					class='members-list__member active'
-					data-team-slide='1'
+					class="members-list__member active"
+					data-team-slide="1"
 				>
-					<p class='member__name'>Brooklyn Simmons</p>
-					<p class='member__position'>Architect Designer</p>
+					<p class="member__name">Brooklyn Simmons</p>
+					<p class="member__position">Architect Designer</p>
 				</li>
 				<li
-					class='members-list__member'
-					data-team-slide='2'
+					class="members-list__member"
+					data-team-slide="2"
 				>
-					<p class='member__name'>Jonson Duoing</p>
-					<p class='member__position'>Architect</p>
+					<p class="member__name">Jonson Duoing</p>
+					<p class="member__position">Architect</p>
 				</li>
 				<li
-					class='members-list__member'
-					data-team-slide='3'
+					class="members-list__member"
+					data-team-slide="3"
 				>
-					<p class='member__name'>Esther Howard</p>
-					<p class='member__position'>Architect</p>
+					<p class="member__name">Esther Howard</p>
+					<p class="member__position">Architect</p>
 				</li>
 			</ul>
 		</div>
 	</div>
+	<Schematic
+		rotation="left"
+		vertAligned="true"
+	/>
 </MainSegment>
-
-<Schematic rotation='left' />
 
 <style>
 	.team__wrap {

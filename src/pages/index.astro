@@ -23,31 +23,46 @@ import Shell from "@layouts/Shell.astro";
 		<section id="home-segment">
 			<Hero />
 		</section>
-		<section>
+		<section class="services-segment">
 			<LatestServices />
 		</section>
 		<section id="about-segment">
 			<AboutUs />
 		</section>
-		<section>
+		<section class="company-status-segment">
 			<CompanyStatus />
 		</section>
-		<section id="projects-segment">
+		<section
+			id="projects-segment"
+			class="projects-segment"
+		>
 			<Projects />
 		</section>
 		<section>
 			<HowToProcess />
 		</section>
-		<section id="testimonial-segment">
+		<section
+			id="testimonial-segment"
+			class="testimonial-segment"
+		>
 			<Testimonial />
 		</section>
-		<section id="team-segment">
+		<section
+			id="team-segment"
+			class="team-segment"
+		>
 			<Team />
 		</section>
-		<section id="pricing-segment">
+		<section
+			id="pricing-segment"
+			class="pricing-segment"
+		>
 			<Pricing />
 		</section>
-		<section id="blog-segment">
+		<section
+			id="blog-segment"
+			class="blog-segment"
+		>
 			<Blog />
 		</section>
 	</main>
@@ -61,5 +76,34 @@ import Shell from "@layouts/Shell.astro";
 		position: sticky;
 		top: 0;
 		z-index: 5;
+	}
+
+	.services-segment {
+		margin-bottom: 143px;
+	}
+
+	.company-status-segment {
+		padding-top: 140px;
+		margin-bottom: 111px;
+	}
+
+	.projects-segment {
+		margin-bottom: 142px;
+	}
+
+	.testimonial-segment {
+		padding-top: 144px;
+	}
+
+	.team-segment {
+		padding-top: 150px;
+	}
+
+	.pricing-segment {
+		margin-bottom: 140px;
+	}
+
+	.blog-segment {
+		margin-bottom: 73px;
 	}
 </style>
