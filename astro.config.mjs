@@ -4,8 +4,6 @@ import { defineConfig } from "astro/config";
 import browserslist from "browserslist";
 import { browserslistToTargets } from "lightningcss";
 
-import purgecss from "astro-purgecss";
-
 // https://astro.build/config
 export default defineConfig({
 	build: {
@@ -22,11 +20,5 @@ export default defineConfig({
 			cssMinify: "lightningcss",
 		},
 	},
-	integrations: [
-		purgecss({
-			safelist: {
-				standard: [/:.*is/],
-			},
-		}),
-	],
+	integrations: [],
 });
