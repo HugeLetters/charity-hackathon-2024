@@ -25,7 +25,7 @@ export default defineConfig({
 	integrations: [
 		purgecss({
 			safelist: {
-				standard: [/:.?is/],
+				standard: [/:.*is/],
 			},
 		}),
 	],
