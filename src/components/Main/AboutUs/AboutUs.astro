@@ -36,7 +36,7 @@ import TextWithReflection from "./TextWithReflection.astro";
 		id="about-us-content"
 	>
 		<div class="header">
-			<div>
+			<div class="header-first-col">
 				<SectionTitle>About Us</SectionTitle>
 				<h3 class="title">What about our industry Performance.</h3>
 			</div>
@@ -147,11 +147,14 @@ import TextWithReflection from "./TextWithReflection.astro";
 	.header {
 		display: flex;
 		justify-content: space-between;
-		gap: 8rem;
 		padding-bottom: 3rem;
 	}
 
+	.header-first-col {
+		flex-basis: 40rem;
+	}
 	.header-second-col {
+		flex-basis: 30rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

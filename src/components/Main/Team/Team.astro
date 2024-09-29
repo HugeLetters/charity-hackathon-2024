@@ -11,12 +11,25 @@ import FourthEngineer from "./img/engineer-4.jpg";
 ---
 
 <script>
-	// const employeePortrait = document.querySelectorAll("team__member-portrait");
-	// const employeeName = document.querySelectorAll("member__name");
+	const teamRoot = document.getElementById("team-root");
+	const teamSlides = teamRoot?.querySelectorAll<HTMLImageElement>(".slide")!;
+	const teamNames = teamRoot?.querySelectorAll<HTMLLIElement>(
+		".members-list__member"
+	);
 
-	// function onNameClick() {}
+	teamNames?.forEach((team) => {
+		team.addEventListener("click", function () {
+			const slideIndex = this.getAttribute("data-team-slide");
 
-	// employeeName.addEventListener("click", onNameClick);
+			if (slideIndex !== null) {
+				teamSlides.forEach((slide) => slide.classList.remove("active"));
+				teamNames.forEach((team) => team.classList.remove("active"));
+
+				teamSlides[parseInt(slideIndex)]?.classList.add("active");
+				this.classList.add("active");
+			}
+		});
+	});
 </script>
 
 <MainSegment>
@@ -28,89 +41,153 @@ import FourthEngineer from "./img/engineer-4.jpg";
 				In today's world, we're bombarded with choices. From streaming services
 				to meal kits, it can be overwhelming to find the best option.
 			</div>
-			<Link
-				theme="neutral"
-				href="todo"
+			=======
+			<div
+				class="team__wrap"
+				id="team-root"
 			>
-				See All Members
-			</Link>
+				<div class="team__intro">
+					<SectionTitle> Our Team Members </SectionTitle>
+					<h3 class="team__headline">Our Dedicated Team Members.</h3>
+					<p class="team__caption">
+						Our team consists of professionals who have extensive experience and
+						in-depth knowledge in the field of construction.
+					</p>
+					<Link
+						theme="neutral"
+						href="todo"
+					>
+						See All Members
+					</Link>
+				</div>
+				<div class="team__member-portraits">
+					<Image
+						src={FirstEngineer}
+						alt=""
+						class="slide team__member-portrait"
+					/>
+					<Image
+						src={SecondEngineer}
+						alt=""
+						class="slide team__member-portrait active"
+					/>
+					<Image
+						src={ThirdEngineer}
+						alt=""
+						class="slide team__member-portrait"
+					/>
+					<Image
+						src={FourthEngineer}
+						alt=""
+						class="slide team__member-portrait"
+					/>
+				</div>
+				<div class="team__members">
+					<ul class="members__list">
+						<li
+							class="members-list__member"
+							data-team-slide="0"
+						>
+							<p class="member__name">Wade Warren</p>
+							<p class="member__position">Architect</p>
+						</li>
+						<li
+							class="members-list__member active"
+							data-team-slide="1"
+						>
+							<p class="member__name">Brooklyn Simmons</p>
+							<p class="member__position">Architect Designer</p>
+						</li>
+						<li
+							class="members-list__member"
+							data-team-slide="2"
+						>
+							<p class="member__name">Jonson Duoing</p>
+							<p class="member__position">Architect</p>
+						</li>
+						<li
+							class="members-list__member"
+							data-team-slide="3"
+						>
+							<p class="member__name">Esther Howard</p>
+							<p class="member__position">Architect</p>
+						</li>
+					</ul>
+				</div>
+			</div><Schematic rotation="left" />
 		</div>
-		<div class="team__member-portraits">
-			<Image
-				src={FirstEngineer}
-				alt=""
-				class="team__member-portrait"
-			/>
-		</div>
-		<!-- todo: сгенерировать текст про команду -->
-		<div class="team__members">
-			<ul class="members__list">
-				<li class="members-list__member">
-					<p class="member__name">Wade Warren</p>
-					<p class="member__position">Architect</p>
-				</li>
-				<li class="members-list__member">
-					<p class="member__name member__name--active">Brooklyn Simmons</p>
-					<p class="member__position">Architect Designer</p>
-				</li>
-				<li class="members-list__member">
-					<p class="member__name">Jonson Duoing</p>
-					<p class="member__position">Architect</p>
-				</li>
-				<li class="members-list__member">
-					<p class="member__name">Esther Howard</p>
-					<p class="member__position">Architect</p>
-				</li>
-			</ul>
-		</div>
-	</div><Schematic rotation="left" /></MainSegment
+		<style>
+			.team__wrap {
+				display: flex;
+				align-items: flex-start;
+				background-color: white;
+				grid-column: 2/3;
+			}
+			.team__intro {
+				max-width: 28rem;
+				margin-right: 4rem;
+				margin-bottom: 9rem;
+			}
+			.team__title {
+				margin-bottom: 1rem;
+			}
+			.team__headline {
+				font-size: 3rem;
+				font-weight: 600;
+				line-height: 4rem;
+				margin-bottom: 0.6rem;
+			}
+			.team__caption {
+				margin-bottom: 2.6rem;
+			}
+			.team__member-portraits {
+				max-width: 26rem;
+				height: 30rem;
+				margin-right: 4rem;
+			}
+
+			.slide {
+				display: none;
+			}
+
+			.slide.active {
+				display: block;
+			}
+			.team__members {
+				width: 16.8rem;
+				text-align: right;
+				padding-top: 2.7rem;
+			}
+			.members-list__member {
+				font-size: 1.5rem;
+				margin-bottom: 2rem;
+				cursor: pointer;
+			}
+			.member__name {
+				font-family: var(--font-jost);
+				font-weight: 600;
+				font-size: 1.5rem;
+				text-decoration: none;
+				color: var(--color-text-primary);
+				transition:
+					color 0.2s ease-in-out,
+					text-decoration 0.2s ease-in-out,
+					font-size 0.2s ease-in-out;
+			}
+
+			.members-list__member:hover .member__name {
+				color: #ff6600;
+			}
+			.members-list__member.active .member__name {
+				font-size: 1.8rem;
+				color: #ff6600;
+				text-decoration: underline;
+			}
+			.member__position {
+				font-family: var(--font-barlow);
+				font-weight: 400;
+				color: var(--color-text-neutral);
+			}
+		</style>
+	</div></MainSegment
 >
-<style>
-	.team__wrap {
-		display: flex;
-		align-items: flex-start;
-		background-color: white;
-		grid-column: 2/3;
-	}
-	.team__intro {
-		max-width: 28rem;
-		margin-right: 4rem;
-		margin-bottom: 9rem;
-	}
-	.team__title {
-		margin-bottom: 1rem;
-	}
-	.team__headline {
-		font-size: 3rem;
-		font-weight: 600;
-		line-height: 4rem;
-		margin-bottom: 0.6rem;
-	}
-	.team__caption {
-		margin-bottom: 2.6rem;
-	}
-	.team__member-portraits {
-		width: 26rem;
-		height: 30rem;
-		margin-right: 4rem;
-	}
-	.team__members {
-		text-align: right;
-		padding-top: 2.7rem;
-	}
-	.members-list__member {
-		font-size: 1.4rem;
-		margin-bottom: 2rem;
-	}
-	.member__name {
-		font-weight: 600;
-	}
-	.member__name--active {
-		font-size: 1.8rem;
-		color: #ff6600;
-		text-decoration: underline;
-	}
-	.member__position {
-		font-weight: 400;
-	}
-</style>

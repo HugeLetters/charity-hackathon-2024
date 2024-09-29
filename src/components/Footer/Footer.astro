@@ -227,11 +227,11 @@ import logo from "./img/logo.svg";
 		width: 100%;
 		height: 568px;
 		transition: filter 500ms;
-		filter: grayscale(0) contrast(1.1);
+		filter: grayscale(1) contrast(1);
 	}
 
-	.footer-map:not(:is(:hover, :focus-within)) {
-		filter: grayscale(1) contrast(1);
+	.footer-map:is(:hover, :focus-within) {
+		filter: grayscale(0) contrast(1.1);
 	}
 
 	/* FORM */
