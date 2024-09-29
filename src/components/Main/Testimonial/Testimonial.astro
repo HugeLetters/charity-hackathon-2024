@@ -2,11 +2,12 @@
 import MainSegment from "@components/shared/MainSegment.astro";
 import Schematic from "@components/shared/Schematic.astro";
 import SectionTitle from "@components/shared/SectionTitle.astro";
+import Card from "./Card.astro";
 ---
 
 <script>
     const root = document.getElementById('testimonials');
-    const slides = root?.querySelectorAll<HTMLDivElement>('.slide')!;
+    const slides = root?.querySelectorAll('.slide')!;
     const avatars = root?.querySelectorAll<HTMLDivElement>('.avatar');
 
     avatars?.forEach(avatar => {
@@ -28,55 +29,21 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
     <Schematic/>
     <section class="testimonials" id="testimonials">
         <div class="testimonials__title">
-            <SectionTitle>Our Testimonials</SectionTitle>
+            <SectionTitle>
+                <h2>Our Testimonials</h2>
+            </SectionTitle>
             <h3 class="heading">What our Clients Say About our work.</h3>
         </div>
         <div class="carousel">
             <div class="carousel__wrapper">
-                <div class="carousel__slide slide">
-                    <p class="quote">
-                        From Start To Finish, Consik Was Exceptional. Their Ability To Stay On Schedule And Manage Every Detail Was Impressive. We Could Not Be Happier With Out Results.
-                    </p>
-                    <div class="author">
-                        <svg width="87" height="62" viewBox="0 0 87 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M59.8673 0H83.2585C84.9154 0 86.2585 1.34315 86.2585 3V33.6957L66.0412 62V34.3696H52.8672C51.2104 34.3696 49.8672 33.0264 49.8672 31.3696V10C49.8672 4.47715 54.3444 0 59.8673 0Z" fill="#0E0E0E"/>
-                            <path d="M9.99982 0H33.3911C35.048 0 36.3911 1.34315 36.3911 3V33.6957L16.1737 62V34.3696H2.99982C1.34296 34.3696 -0.000183105 33.0264 -0.000183105 31.3696V10C-0.000183105 4.47715 4.47698 0 9.99982 0Z" fill="#0E0E0E"/>
-                        </svg>
-                        <div class="author__info">
-                            <span class="author__name">Sarah Johnson</span>
-                            <span class="author__job">Interior Designer</span>
-                        </div>
-                    </div>
+                <div class="slide">
+                    <Card class="carousel__slide" quote="From Start To Finish, Consik Was Exceptional. Their Ability To Stay On Schedule And Manage Every Detail Was Impressive. We Could Not Be Happier With Out Results." name="Sarah Johnson" job="Interior Designer"/>
                 </div>
-                <div class="carousel__slide slide active">
-                    <p class="quote">
-                        Working With Consik A Fantastic Experience. They Truly Understood Our Vision And Turned Our Dream Home Into A Reality. The Attention To Detail And Dedication Were The Team.
-                    </p>
-                    <div class="author">
-                        <svg width="87" height="62" viewBox="0 0 87 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M59.8673 0H83.2585C84.9154 0 86.2585 1.34315 86.2585 3V33.6957L66.0412 62V34.3696H52.8672C51.2104 34.3696 49.8672 33.0264 49.8672 31.3696V10C49.8672 4.47715 54.3444 0 59.8673 0Z" fill="#0E0E0E"/>
-                            <path d="M9.99982 0H33.3911C35.048 0 36.3911 1.34315 36.3911 3V33.6957L16.1737 62V34.3696H2.99982C1.34296 34.3696 -0.000183105 33.0264 -0.000183105 31.3696V10C-0.000183105 4.47715 4.47698 0 9.99982 0Z" fill="#0E0E0E"/>
-                        </svg>
-                        <div class="author__info">
-                            <span class="author__name">Brooklyn Simmons</span>
-                            <span class="author__job">Architect Designer </span>
-                        </div>
-                    </div>
+                <div class="slide active">
+                    <Card class="carousel__slide" quote="Working With Consik A Fantastic Experience. They Truly Understood Our Vision And Turned Our Dream Home Into A Reality. The Attention To Detail And Dedication Were The Team." name="Brooklyn Simmons" job="Architect Designer"/>
                 </div>
-                <div class="carousel__slide slide">
-                    <p class="quote">
-                        The Consik Team Exceeded Our Expectations. Their Professionalism Were Unmatched. They Transformed Our Office Space Into A Modern, Functional Masterpiece.
-                    </p>
-                    <div class="author">
-                        <svg width="87" height="62" viewBox="0 0 87 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M59.8673 0H83.2585C84.9154 0 86.2585 1.34315 86.2585 3V33.6957L66.0412 62V34.3696H52.8672C51.2104 34.3696 49.8672 33.0264 49.8672 31.3696V10C49.8672 4.47715 54.3444 0 59.8673 0Z" fill="#0E0E0E"/>
-                            <path d="M9.99982 0H33.3911C35.048 0 36.3911 1.34315 36.3911 3V33.6957L16.1737 62V34.3696H2.99982C1.34296 34.3696 -0.000183105 33.0264 -0.000183105 31.3696V10C-0.000183105 4.47715 4.47698 0 9.99982 0Z" fill="#0E0E0E"/>
-                        </svg>
-                        <div class="author__info">
-                            <span class="author__name">Johnathan Doe</span>
-                            <span class="author__job">Project Manager</span>
-                        </div>
-                    </div>
+                <div class="slide">
+                    <Card class="carousel__slide" quote="The Consik Team Exceeded Our Expectations. Their Professionalism Were Unmatched. They Transformed Our Office Space Into A Modern, Functional Masterpiece." name="Johnathan Doe" job="Project Manager"/>
                 </div>
             </div>
             <div class="decor"></div>
@@ -113,14 +80,11 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
         height: 1px;
         width: 100%;
         background: linear-gradient(to right, var(--color-text-primary) 470px, rgba(85, 85, 85, 0.1) 470px);
-        /* background-color: var(--color-text-primary); */
-        /* background: linear-gradient(to right, var(--color-text-primary) 0%, var(--color-text-primary) 50%); */
-        /* clip-path: polygon(0 0, 0 0, 100% 33%, 0 100%); */
     }
 
-    .carousel__slide {
+    /* .carousel__slide {
         padding-top: 3.25rem;
-    }
+    } */
 
     .slide {
         display: none;
@@ -128,40 +92,6 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 
     .slide.active {
         display: block;
-    }
-
-    .quote {
-        margin-bottom: 2.5rem;
-        max-width: 60rem;
-        font-family: var(--font-jost);
-        font-weight: 400;
-        font-size: 2rem;
-        color: var(--color-text-neutral-dark); 
-    }
-
-    .author {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .author__info {
-        display: flex;
-        flex-direction: column;
-        margin-left: 2rem;
-    }
-
-    .author__name {
-        font-family: var(--font-jost);
-        font-weight: 600;
-        font-size: 2rem;
-    }
-
-    .author__job {
-        font-family: var(--font-barlow);
-        font-weight: 400;
-        font-size: 1.5rem;
-        color: var(--color-text-neutral-dark);
     }
 
     .decor {
