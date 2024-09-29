@@ -6,140 +6,176 @@ import Card from "./Card.astro";
 ---
 
 <script>
-    const root = document.getElementById('testimonials');
-    const slides = root?.querySelectorAll('.slide')!;
-    const avatars = root?.querySelectorAll<HTMLDivElement>('.avatar');
+	const root = document.getElementById("testimonials-root");
+	const slides = root?.querySelectorAll<HTMLDivElement>(".slide")!;
+	const avatars = root?.querySelectorAll<HTMLDivElement>(".avatar");
 
-    avatars?.forEach(avatar => {
-        avatar.addEventListener('click', function() {
-            const slideIndex = this.getAttribute('data-slide');
+	avatars?.forEach((avatar) => {
+		avatar.addEventListener("click", function () {
+			const slideIndex = this.getAttribute("data-slide");
 
-            if (slideIndex !== null) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            avatars.forEach(avatar => avatar.classList.remove('active'));
+			if (slideIndex !== null) {
+				slides.forEach((slide) => slide.classList.remove("active"));
+				avatars.forEach((avatar) => avatar.classList.remove("active"));
 
-            slides[parseInt(slideIndex)]?.classList.add('active');
-            this.classList.add('active');
-            }
-        })
-    })
+				slides[parseInt(slideIndex)]?.classList.add("active");
+				this.classList.add("active");
+			}
+		});
+	});
 </script>
 
 <MainSegment>
-    <Schematic/>
-    <section class="testimonials" id="testimonials">
-        <div class="testimonials__title">
-            <SectionTitle>
-                <h2>Our Testimonials</h2>
-            </SectionTitle>
-            <h3 class="heading">What our Clients Say About our work.</h3>
-        </div>
-        <div class="carousel">
-            <div class="carousel__wrapper">
-                <div class="slide">
-                    <Card class="carousel__slide" quote="From Start To Finish, Consik Was Exceptional. Their Ability To Stay On Schedule And Manage Every Detail Was Impressive. We Could Not Be Happier With Out Results." name="Sarah Johnson" job="Interior Designer"/>
-                </div>
-                <div class="slide active">
-                    <Card class="carousel__slide" quote="Working With Consik A Fantastic Experience. They Truly Understood Our Vision And Turned Our Dream Home Into A Reality. The Attention To Detail And Dedication Were The Team." name="Brooklyn Simmons" job="Architect Designer"/>
-                </div>
-                <div class="slide">
-                    <Card class="carousel__slide" quote="The Consik Team Exceeded Our Expectations. Their Professionalism Were Unmatched. They Transformed Our Office Space Into A Modern, Functional Masterpiece." name="Johnathan Doe" job="Project Manager"/>
-                </div>
-            </div>
-            <div class="decor"></div>
-            <div class="avatars">
-                <div class="avatar avatar-1" data-slide="0"></div>
-                <div class="avatar avatar-2 active" data-slide="1"></div>
-                <div class="avatar avatar-3" data-slide="2"></div>
-            </div>
-        </div>
-    </section>
+	<Schematic />
+	<section
+		class="testimonials"
+		id="testimonials-root"
+	>
+		<div class="testimonials__title">
+			<SectionTitle>
+				<h2>Our Testimonials</h2>
+			</SectionTitle>
+			<h3 class="heading">What our Clients Say About our work.</h3>
+		</div>
+		<div class="carousel">
+			<div class="carousel__wrapper">
+				<div class="slide">
+					<Card
+						class="carousel__slide"
+						quote="From Start To Finish, Consik Was Exceptional. Their Ability To Stay On Schedule And Manage Every Detail Was Impressive. We Could Not Be Happier With Out Results."
+						name="Sarah Johnson"
+						job="Interior Designer"
+					/>
+				</div>
+				<div class="slide active">
+					<Card
+						class="carousel__slide"
+						quote="Working With Consik A Fantastic Experience. They Truly Understood Our Vision And Turned Our Dream Home Into A Reality. The Attention To Detail And Dedication Were The Team."
+						name="Brooklyn Simmons"
+						job="Architect Designer"
+					/>
+				</div>
+				<div class="slide">
+					<Card
+						class="carousel__slide"
+						quote="The Consik Team Exceeded Our Expectations. Their Professionalism Were Unmatched. They Transformed Our Office Space Into A Modern, Functional Masterpiece."
+						name="Johnathan Doe"
+						job="Project Manager"
+					/>
+				</div>
+			</div>
+			<div class="decor"></div>
+			<div class="avatars">
+				<div
+					class="avatar avatar-1"
+					data-slide="0"
+				>
+				</div>
+				<div
+					class="avatar avatar-2 active"
+					data-slide="1"
+				>
+				</div>
+				<div
+					class="avatar avatar-3"
+					data-slide="2"
+				>
+				</div>
+			</div>
+		</div>
+	</section>
 </MainSegment>
 
 <style>
-    .heading {
-        max-width: 43rem;
-        font-family: var(--font-jost);
-        font-weight: 600;
-        font-size: 3.25rem;
-        line-height: 4.25rem;
-    }
+	.heading {
+		max-width: 43rem;
+		font-family: var(--font-jost);
+		font-weight: 600;
+		font-size: 3.25rem;
+		line-height: 4.25rem;
+	}
 
-    .carousel {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 2.6rem;
-    }
+	.carousel {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2.6rem;
+	}
 
-    .carousel::after {
-        content: "";
-        position: absolute;
-        bottom: -42px;
-        left: 0;
-        height: 1px;
-        width: 100%;
-        background: linear-gradient(to right, var(--color-text-primary) 470px, rgba(85, 85, 85, 0.1) 470px);
-    }
+	.carousel::after {
+		content: "";
+		position: absolute;
+		bottom: -42px;
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background: linear-gradient(
+			to right,
+			var(--color-text-primary) 470px,
+			rgba(85, 85, 85, 0.1) 470px
+		);
+	}
 
-    /* .carousel__slide {
+	/* .carousel__slide {
         padding-top: 3.25rem;
     } */
 
-    .slide {
-        display: none;
-    }
+	.slide {
+		display: none;
+	}
 
-    .slide.active {
-        display: block;
-    }
+	.slide.active {
+		display: block;
+	}
 
-    .decor {
-        width: 17.5rem;
-        background-image: url('img/shape.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
+	.decor {
+		width: 17.5rem;
+		background-image: url("img/shape.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
 
-    .avatars {
-        display: flex;
-        flex-direction: column;
-        gap: 1.7rem;
-        min-width: 5.7rem;
-    }
+	.avatars {
+		display: flex;
+		flex-direction: column;
+		gap: 1.7rem;
+		min-width: 5.7rem;
+	}
 
-    .avatar {
-        border: 2px solid white;
-        border-radius: 50%;
-        width: 4.4rem;
-        height: 4.4rem;
-        background-color: red;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        transform: scale(1);
-        transition: border-color .2s ease-in-out, transform .2s ease-in-out;
-        cursor: pointer;
-    }
+	.avatar {
+		border: 2px solid white;
+		border-radius: 50%;
+		width: 4.4rem;
+		height: 4.4rem;
+		background-color: red;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		transform: scale(1);
+		transition:
+			border-color 0.2s ease-in-out,
+			transform 0.2s ease-in-out;
+		cursor: pointer;
+	}
 
-    .avatar:hover {
-        border-color: var(--color-brand-primary);
-    }
-    .avatar.active {
-        border-color: var(--color-brand-primary);
-        transform: scale(1.55);
-    }
+	.avatar:hover {
+		border-color: var(--color-brand-primary);
+	}
+	.avatar.active {
+		border-color: var(--color-brand-primary);
+		transform: scale(1.55);
+	}
 
-    .avatar-1 {
-        background-image: url('img/worker-1.jpg');
-    }
+	.avatar-1 {
+		background-image: url("img/worker-1.jpg");
+	}
 
-    .avatar-2 {
-        background-image: url('img/worker-2.jpg');
-    }
+	.avatar-2 {
+		background-image: url("img/worker-2.jpg");
+	}
 
-    .avatar-3 {
-        background-image: url('img/worker-3.jpg');
-    }
+	.avatar-3 {
+		background-image: url("img/worker-3.jpg");
+	}
 </style>

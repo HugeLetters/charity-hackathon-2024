@@ -7,7 +7,7 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 <script>
 	const STATUS_SPEED = 400;
 
-	const statusSection = document.getElementById("sectionStatus")!;
+	const statusSection = document.getElementById("section-status-content")!;
 	const statusCounters = statusSection.querySelectorAll("[data-id=status-num]");
 
 	const myObserver = new IntersectionObserver(
@@ -54,9 +54,9 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 		<Schematic />
 	</div>
 
-	<section
+	<div
 		class="status"
-		id="sectionStatus"
+		id="section-status-content"
 	>
 		<div class="status__title-wrapper">
 			<SectionTitle>Our Company Status</SectionTitle>
@@ -109,7 +109,7 @@ import SectionTitle from "@components/shared/SectionTitle.astro";
 				<p class="status__number-descr">Running Project</p>
 			</div>
 		</div>
-	</section>
+	</div>
 </MainSegment>
 
 <style>
