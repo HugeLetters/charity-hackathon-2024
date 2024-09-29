@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import logo from "@components/Footer/img/logo.svg";
 ---
 
-<!-- todo - Адаптив.. Не знаю, что тут делать с адаптивом, возможно полностью убирать левую оранжевую область, и запихивать все в бургер --><!-- todo - sticky -->
+<!-- todo - Адаптив.. Не знаю, что тут делать с адаптивом, возможно полностью убирать левую оранжевую область, и запихивать все в бургер -->
 <div class="header-wrapper">
 	<div class="header__inner">
 		<div class="logo-wrapper">
@@ -207,17 +207,17 @@ import logo from "@components/Footer/img/logo.svg";
 		</div>
 
 		<div class="cta">
-			<!-- todo - Добавить ховер на кнопку звонка и, возможно, на ссылку с номером -->
 			<a
 				class="cta__call-btn"
 				href="tel:77045550127"
 			>
 				<svg
+					class="cta-logo"
 					viewBox="0 0 60 60"
-					fill="none"
 				>
 					<path d="M0 0h60v60H0z"> </path>
 					<path
+						class="cta-logo-phone"
 						d="M30.8 20.835a.834.834 0 01.834-.834 8.343 8.343 0 018.333 8.334.834.834 0 01-1.666 0 6.674 6.674 0 00-6.667-6.667.833.833 0 01-.833-.833zM31.635 25a3.333 3.333 0 013.333 3.334.833.833 0 001.667 0 5.005 5.005 0 00-5-5 .834.834 0 000 1.666zm7.578 8.95a2.584 2.584 0 010 3.648l-.759.874c-6.825 6.534-23.433-10.07-17-16.917l.959-.833a2.568 2.568 0 013.605.033c.026.026 1.57 2.032 1.57 2.032a2.583 2.583 0 01-.005 3.568l-.965 1.214a10.65 10.65 0 005.775 5.787l1.221-.97a2.584 2.584 0 013.568-.006s2.005 1.544 2.03 1.57zm-1.147 1.211s-1.994-1.534-2.02-1.56a.916.916 0 00-1.29 0c-.023.024-1.704 1.363-1.704 1.363a.834.834 0 01-.816.126 12.507 12.507 0 01-7.35-7.34.833.833 0 01.12-.833s1.34-1.682 1.362-1.703a.917.917 0 000-1.291c-.026-.025-1.56-2.021-1.56-2.021a.917.917 0 00-1.259.033l-.958.833c-4.702 5.653 9.69 19.247 14.645 14.566l.76-.875a.934.934 0 00.07-1.298z"
 						fill="#fff"
 					></path>
@@ -232,7 +232,6 @@ import logo from "@components/Footer/img/logo.svg";
 					href="tel:77045550127"
 				>
 					(704) 555-0127
-					<span class="visually-hidden">Make a call</span>
 				</a>
 			</div>
 		</div>
@@ -407,10 +406,40 @@ import logo from "@components/Footer/img/logo.svg";
 		gap: 14px;
 		align-items: center;
 		border-left: 1px solid rgba(255, 255, 255, 0.1);
+		padding-left: 2rem;
 	}
 
 	.cta__call-btn {
 		width: 60px;
+		transition: rotate 200ms;
+	}
+
+	.cta-logo-phone {
+		transform-origin: center;
+	}
+
+	.cta__call-btn:is(:hover, :focus-visible) {
+		animation-name: call-us;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+	}
+
+	.cta__call-btn:is(:hover, :focus-visible) .cta-logo-phone {
+		animation-name: call-us;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-direction: reverse;
+		animation-timing-function: cubic-bezier(0.75, 0, 0.75, 0.9);
+	}
+
+	@keyframes call-us {
+		from {
+			rotate: 0deg;
+		}
+
+		to {
+			rotate: 360deg;
+		}
 	}
 
 	.cta__title {
@@ -424,6 +453,15 @@ import logo from "@components/Footer/img/logo.svg";
 		font-size: 16px;
 		line-height: 26px;
 		font-weight: 600;
+		transition: color 200ms;
+	}
+
+	.cta__call:is(:hover, :focus-visible) {
+		color: var(--color-brand-primary);
+	}
+
+	.cta-logo {
+		fill: var(--color-brand-primary);
 	}
 
 	svg {
