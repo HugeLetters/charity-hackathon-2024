@@ -10,9 +10,11 @@ import FourthEngineer from "./img/engineer-4.jpg";
 ---
 
 <script>
-	const teamRoot = document.getElementById('team-root');
-	const teamSlides = teamRoot?.querySelectorAll<HTMLImageElement>('.slide')!;
-	const teamNames = teamRoot?.querySelectorAll<HTMLLIElement>('.members-list__member');
+	const teamRoot = document.getElementById("team-root");
+	const teamSlides = teamRoot?.querySelectorAll<HTMLImageElement>(".slide")!;
+	const teamNames = teamRoot?.querySelectorAll<HTMLLIElement>(
+		".members-list__member"
+	);
 
 	teamNames?.forEach((team) => {
 		team.addEventListener("click", function () {
@@ -30,62 +32,73 @@ import FourthEngineer from "./img/engineer-4.jpg";
 </script>
 
 <MainSegment>
-	<div class='team__wrap' id="team-root">
+	<div
+		class='team__wrap'
+		id='team-root'
+	>
 		<div class='team__intro'>
 			<SectionTitle> Our Team Members </SectionTitle>
 			<h3 class='team__headline'>Our Dedicated Team Members.</h3>
 			<p class='team__caption'>
-				In today's world, we're bombarded with choices. From streaming
-				services to meal kits, it can be overwhelming to find the best
-				option.
+				Our team consists of professionals who have extensive experience
+				and in-depth knowledge in the field of construction.
 			</p>
 			<Link
-				theme="neutral"
-				href="todo"
+				theme='neutral'
+				href='todo'
 			>
 				See All Members
 			</Link>
 		</div>
-		<div class="team__member-portraits">
+		<div class='team__member-portraits'>
 			<Image
 				src={FirstEngineer}
 				alt=''
 				class='slide team__member-portrait'
 			/>
-			<Image 				
+			<Image
 				src={SecondEngineer}
 				alt=''
 				class='slide team__member-portrait active'
 			/>
-			<Image 				
+			<Image
 				src={ThirdEngineer}
 				alt=''
 				class='slide team__member-portrait'
 			/>
-			<Image 
+			<Image
 				src={FourthEngineer}
 				alt=''
 				class='slide team__member-portrait'
 			/>
 		</div>
-		<!-- todo: сгенерировать текст про команду -->
 		<div class='team__members'>
 			<ul class='members__list'>
-				<li class='members-list__member' data-team-slide="0">
+				<li
+					class='members-list__member'
+					data-team-slide='0'
+				>
 					<p class='member__name'>Wade Warren</p>
 					<p class='member__position'>Architect</p>
 				</li>
-				<li class='members-list__member active' data-team-slide="1">
-					<p class='member__name'>
-						Brooklyn Simmons
-					</p>
+				<li
+					class='members-list__member active'
+					data-team-slide='1'
+				>
+					<p class='member__name'>Brooklyn Simmons</p>
 					<p class='member__position'>Architect Designer</p>
 				</li>
-				<li class='members-list__member' data-team-slide="2">
+				<li
+					class='members-list__member'
+					data-team-slide='2'
+				>
 					<p class='member__name'>Jonson Duoing</p>
 					<p class='member__position'>Architect</p>
 				</li>
-				<li class='members-list__member' data-team-slide="3">
+				<li
+					class='members-list__member'
+					data-team-slide='3'
+				>
 					<p class='member__name'>Esther Howard</p>
 					<p class='member__position'>Architect</p>
 				</li>
@@ -146,13 +159,16 @@ import FourthEngineer from "./img/engineer-4.jpg";
 		font-size: 1.5rem;
 		text-decoration: none;
 		color: var(--color-text-primary);
-		transition: color .2s ease-in-out, text-decoration .2s ease-in-out, font-size .2s ease-in-out;
+		transition:
+			color 0.2s ease-in-out,
+			text-decoration 0.2s ease-in-out,
+			font-size 0.2s ease-in-out;
 	}
 
 	.members-list__member:hover .member__name {
 		color: #ff6600;
 	}
-	.members-list__member.active .member__name{
+	.members-list__member.active .member__name {
 		font-size: 1.8rem;
 		color: #ff6600;
 		text-decoration: underline;
