@@ -43,12 +43,24 @@ import vid3Preview from "./assets/vid3.jpg";
 		});
 	}
 
+	function stopVideo() {
+		videoPlayer.pause();
+		setTimeout(() => {
+			videoPlayer.currentTime = 0;
+		}, 400);
+	}
+
 	playBtn.addEventListener("click", () => {
 		videoModal.showModal();
+		videoPlayer.play();
 	});
+
 	modalCloseBtn.addEventListener("click", () => {
+		stopVideo();
 		videoModal.close();
 	});
+
+	videoModal.addEventListener("close", stopVideo);
 </script>
 
 <MainSegment>
@@ -56,7 +68,7 @@ import vid3Preview from "./assets/vid3.jpg";
 		<video
 			id="process-video-player"
 			class="video"
-			src={vid2}
+			src={vid1}
 			controls
 		></video>
 		<button class="modal-close-btn">Close</button>
@@ -75,7 +87,7 @@ import vid3Preview from "./assets/vid3.jpg";
 			<button
 				data-video={vid1}
 				data-video-preview={vid1Preview.src}
-				class="tabs__btn"
+				class="tabs__btn tabs__btn--active"
 				type="button"
 			>
 				01. Planning and Design
@@ -84,7 +96,7 @@ import vid3Preview from "./assets/vid3.jpg";
 			<button
 				data-video={vid2}
 				data-video-preview={vid2Preview.src}
-				class="tabs__btn tabs__btn--active"
+				class="tabs__btn"
 				type="button"
 			>
 				02. Permitting and Approvals
@@ -105,7 +117,7 @@ import vid3Preview from "./assets/vid3.jpg";
 				<Image
 					class="media__vid-content"
 					alt=""
-					src={vid2Preview}
+					src={vid1Preview}
 				/>
 
 				<button
